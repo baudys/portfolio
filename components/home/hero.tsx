@@ -12,7 +12,7 @@ export const Hero = () => {
 
   return (
     <section>
-      <Container className='grid gap-10 md:grid-cols-2'>
+      <Container className='grid gap-4 md:grid-cols-2 md:gap-10'>
         <div className='flex flex-col justify-center'>
           <p className='flex items-center gap-1 text-sm text-muted-foreground/80 md:text-base'>
             <MapPin className='size-5' />
@@ -28,12 +28,12 @@ export const Hero = () => {
               )
             </span>
           </p>
-          <h1 className='text-5xl font-bold 2xl:text-6xl'>
+          <h1 className='text-4xl font-bold lg:text-5xl 2xl:text-6xl'>
             <WordRotate words={['Ahoj,', 'Hola,', 'Ahoy,', 'Ciao,']} />
             {language === 'en' && "I'm Daniel! 👋 "}
             {language === 'cs' && 'jsem Daniel! 👋 '}
           </h1>
-          <p className='mt-2 max-w-[80ch] text-justify text-lg text-zinc-800 2xl:text-xl dark:text-zinc-200'>
+          <p className='mt-2 max-w-[80ch] text-justify text-zinc-800 dark:text-zinc-200 lg:text-lg 2xl:text-xl'>
             {language === 'cs' && (
               <>
                 <b>Webový vývojář</b>, <b>programátor</b>, <b>fotograf</b> a{' '}
