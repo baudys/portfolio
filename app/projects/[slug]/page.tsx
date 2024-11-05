@@ -5,11 +5,29 @@ import { Container } from '@/components/container'
 import { projects } from '@/database/projects'
 import { useLanguage } from '@/store/use-language'
 import Link from 'next/link'
-import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Title } from '@/components/title'
 import { Breadcrumb } from '@/components/breadcrumb'
 import { Cursor } from '@/components/cursor'
+import { Marquee } from '@/components/ui/marquee'
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiSanity,
+  SiTypeform,
+  SiFramer,
+  SiShadcnui,
+  SiRadixui,
+  SiLeaflet,
+  SiZod,
+  SiMui,
+  SiReact,
+  SiThreedotjs,
+  SiVite,
+  SiPrisma,
+  SiMongodb,
+} from 'react-icons/si'
 
 interface PageProps {
   params: {
@@ -29,8 +47,7 @@ export default function Page({ params }: PageProps) {
     macbook,
     descriptionEn,
     descriptionCs,
-    featuresEn,
-    featuresCs,
+    technologies,
   } = projects.filter((data: any) => data.slug === params.slug)[0]
 
   return (
@@ -89,18 +106,126 @@ export default function Page({ params }: PageProps) {
           />
         </div>
 
-        <Title label={language === 'en' ? 'Features' : 'Funkce'} />
-        <motion.ul
+        <Title label={language === 'en' ? 'Technologies' : 'Technologie'} />
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className='mb-10 text-xl sm:text-2xl lg:mb-20 lg:text-3xl xl:mb-32'
         >
-          {language === 'en' &&
-            featuresEn?.map((feature) => <li key={feature}>~ {feature}</li>)}
-          {language === 'cs' &&
-            featuresCs?.map((feature) => <li key={feature}>~ {feature}</li>)}
-        </motion.ul>
+          <Marquee className='-mt-8 mb-10 lg:mb-20 xl:mb-32'>
+            {technologies?.map((technology) => (
+              <div
+                key={technology}
+                className='relative mx-[4rem] flex h-full w-fit items-center justify-start whitespace-nowrap text-xl font-semibold md:text-3xl'
+              >
+                {technology === 'react' && (
+                  <>
+                    <SiReact
+                      size={45}
+                      className='size-10 fill-sky-400 md:size-12'
+                    />
+                    <span className='ml-3'>React</span>
+                  </>
+                )}
+                {technology === 'vite' && (
+                  <>
+                    <SiVite
+                      size={45}
+                      className='size-10 fill-purple-700 md:size-12'
+                    />
+                    <span className='ml-3'>Vite</span>
+                  </>
+                )}
+                {technology === 'nextjs' && (
+                  <>
+                    <SiNextdotjs className='size-10 md:size-12' />
+                    <span className='ml-3'>Next</span>
+                  </>
+                )}
+                {technology === 'typescript' && (
+                  <>
+                    <SiTypescript
+                      size={45}
+                      className='size-10 fill-blue-500 md:size-12'
+                    />
+                    <span className='ml-3'>Typescript</span>
+                  </>
+                )}
+                {technology === 'framer' && (
+                  <>
+                    <SiFramer size={45} className='size-10 md:size-12' />
+                    <span className='ml-3'>Framer Motion</span>
+                  </>
+                )}
+                {technology === 'shadcn' && (
+                  <>
+                    <SiShadcnui className='size-10 md:size-12' />
+                    <span className='ml-3'>Shadcn</span>
+                  </>
+                )}
+                {technology === 'radixui' && (
+                  <>
+                    <SiRadixui className='size-10 md:size-12' />
+                    <span className='ml-3'>Radix UI</span>
+                  </>
+                )}
+                {technology === 'mui' && (
+                  <>
+                    <SiMui className='size-10 fill-blue-500 md:size-12' />
+                    <span className='ml-3'>Mui</span>
+                  </>
+                )}
+                {technology === 'three' && (
+                  <>
+                    <SiThreedotjs className='size-10 md:size-12' />
+                    <span className='ml-3'>Three</span>
+                  </>
+                )}
+                {technology === 'tailwind' && (
+                  <>
+                    <SiTailwindcss className='size-10 fill-sky-500 md:size-12' />
+                    <span className='ml-3'>Tailwind</span>
+                  </>
+                )}
+                {technology === 'prisma' && (
+                  <>
+                    <SiPrisma className='size-10 fill-blue-600 md:size-12' />
+                    <span className='ml-3'>Prisma</span>
+                  </>
+                )}
+                {technology === 'mongodb' && (
+                  <>
+                    <SiMongodb className='size-10 fill-green-400 md:size-12' />
+                    <span className='ml-3'>Mongo DB</span>
+                  </>
+                )}
+                {technology === 'typeform' && (
+                  <>
+                    <SiTypeform className='size-24 md:size-32' />
+                  </>
+                )}
+                {technology === 'zod' && (
+                  <>
+                    <SiZod className='size-10 fill-blue-600 md:size-12' />
+                    <span className='ml-3'>Zod</span>
+                  </>
+                )}
+                {technology === 'leaflet' && (
+                  <>
+                    <SiLeaflet className='size-10 fill-green-500 md:size-12' />
+                    <span className='ml-3'>Leaflet</span>
+                  </>
+                )}
+                {technology === 'sanity' && (
+                  <>
+                    <SiSanity className='size-10 fill-red-500 md:size-12' />
+                    <span className='ml-3'>Sanity</span>
+                  </>
+                )}
+              </div>
+            ))}
+          </Marquee>
+        </motion.div>
 
         <Title label={language === 'en' ? 'Showcase' : 'Ukázka'} />
         <motion.img
