@@ -32,7 +32,7 @@ export const Contact = () => {
       />
       <MagicCard
         className='rounded-2xl bg-zinc-100 dark:bg-zinc-900'
-        gradientColor={theme === 'dark' ? '#262626' : '#D9D9D9'}
+        gradientColor={theme === 'dark' ? '#262626' : '#E0E0E0'}
       >
         <BorderBeam className='rounded-2xl' />
         <div className='p-4 shadow-sm md:p-10'>
