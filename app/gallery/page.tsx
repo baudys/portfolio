@@ -17,12 +17,12 @@ export default function GalleryPage() {
         <div className='grid grid-cols-2 gap-2 md:hidden'>
           <div className='flex flex-col gap-2'>
             {shuffledGallery.slice(0, itemsPer2Column).map((item) => (
-              <Photo key={item} photo={item} />
+              <Photo key={item} photo={item.image} />
             ))}
           </div>
           <div className='flex flex-col gap-2'>
             {shuffledGallery.slice(itemsPer2Column).map((item) => (
-              <Photo key={item} photo={item} />
+              <Photo key={item} photo={item.image} />
             ))}
           </div>
         </div>
@@ -30,21 +30,21 @@ export default function GalleryPage() {
         <div className='hidden grid-cols-3 gap-6 md:grid'>
           <div className='flex flex-col gap-6'>
             {shuffledGallery.slice(0, itemsPer3Column).map((item) => (
-              <Photo key={item} photo={item} />
+              <Photo key={item} photo={item.image} />
             ))}
           </div>
           <div className='flex flex-col gap-6'>
             {shuffledGallery
               .slice(itemsPer3Column, itemsPer3Column * 2)
               .map((item) => (
-                <Photo key={item} photo={item} />
+                <Photo key={item} photo={item.image} />
               ))}
           </div>
           <div className='flex flex-col gap-6'>
             {shuffledGallery
               .slice(itemsPer3Column * 2, itemsPer3Column * 3)
               .map((item) => (
-                <Photo key={item} photo={item} />
+                <Photo key={item} photo={item.image} />
               ))}
           </div>
         </div>

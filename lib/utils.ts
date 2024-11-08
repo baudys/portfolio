@@ -18,7 +18,7 @@ export function seedRandom(seed: number) {
   }
 }
 
-export function shuffle(array: string[], seed: number) {
+export function shuffle(array: any[], seed: number) {
   let random = seedRandom(seed)
 
   for (let i = array.length - 1; i > 0; i--) {
