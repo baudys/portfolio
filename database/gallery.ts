@@ -19,6 +19,30 @@ export const gallery = [
     image: '/gallery/alpina/5.webp',
     categories: ['cars'],
   },
+  {
+    image: '/gallery/alpina/6.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/alpina/7.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/alpina/8.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/alpina/9.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/alpina/10.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/alpina/11.webp',
+    categories: ['cars'],
+  },
 
   {
     image: '/gallery/animals/1.webp',
@@ -288,6 +312,12 @@ export const vertical = [
   '/gallery/alpina/3.webp',
   '/gallery/alpina/4.webp',
   '/gallery/alpina/5.webp',
+  '/gallery/alpina/6.webp',
+  '/gallery/alpina/7.webp',
+  '/gallery/alpina/8.webp',
+  '/gallery/alpina/9.webp',
+  '/gallery/alpina/10.webp',
+  '/gallery/alpina/11.webp',
   '/gallery/animals/3.webp',
   '/gallery/animals/4.webp',
   '/gallery/animals/5.webp',
