@@ -112,7 +112,7 @@ export default function Page({ params }: PageProps) {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          <Marquee className='-mt-8 mb-10 lg:mb-20 xl:mb-32'>
+          <Marquee className='-mt-8 mb-10 lg:mb-20 lg:mt-0 xl:mb-32'>
             {technologies?.map((technology) => (
               <div
                 key={technology}
