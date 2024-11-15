@@ -33,7 +33,7 @@ export const Cursor = ({ type, children }: CursorProps) => {
     >
       {children}
       <div
-        className='pointer-events-none fixed left-0 top-0 z-[9998] hidden sm:block'
+        className='pointer-events-none fixed left-0 top-0 z-[9998] hidden rounded-full backdrop-blur-lg sm:block'
         style={{
           height: 80,
           width: 80,
@@ -43,7 +43,7 @@ export const Cursor = ({ type, children }: CursorProps) => {
         }}
       >
         {isHovering && (
-          <div className='pointer-events-none absolute inset-0 z-[9999] grid h-full w-full place-content-center rounded-full border border-zinc-300/70 bg-black/40 backdrop-blur-lg'>
+          <div className='pointer-events-none absolute inset-0 z-[9999] grid h-full w-full place-content-center rounded-full border border-zinc-300/70 bg-black/40'>
             {type === 'project' && <ArrowRight className='stroke-white' />}
             {type === 'external' && <ExternalLink className='stroke-white' />}
             {type === 'photo' && <Camera className='stroke-white' />}
