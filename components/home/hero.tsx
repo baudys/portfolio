@@ -33,25 +33,25 @@ export const Hero = () => {
             {language === 'en' && "I'm Daniel! 👋 "}
             {language === 'cs' && 'jsem Daniel! 👋 '}
           </h1>
-          <p className='mt-2 max-w-[80ch] text-justify text-zinc-800 dark:text-zinc-200 lg:text-lg 2xl:text-xl'>
-            {language === 'cs' && (
-              <>
-                <b>Webový vývojář</b>, <b>programátor</b>, <b>fotograf</b> a{' '}
-                <b>designer</b>. Rád spojuji technické dovednosti s kreativitou,
-                abych vytvářel funkční a estetické projekty. Baví mě přinášet
-                nápady k životu – jak v digitálním světě, tak skrze objektiv
-                fotoaparátu.
-              </>
-            )}
+          <p className='my-2 text-zinc-950 lg:text-lg 2xl:text-xl'>
             {language === 'en' && (
               <>
                 <b>Web developer</b>, <b>programmer</b>, <b>photographer</b> and{' '}
-                <b>designer</b>. I like to combine technical skills with
-                creativity to create functional and aesthetic projects. I enjoy
-                bringing ideas to life - both in the digital world and through
-                the lens of a camera.
+                <b>designer</b>.
               </>
             )}
+            {language === 'cs' && (
+              <>
+                <b>Webový vývojář</b>, <b>programátor</b>, <b>fotograf</b> a{' '}
+                <b>designer</b>
+              </>
+            )}
+          </p>
+          <p className='max-w-[80ch] text-justify text-sm text-zinc-800 dark:text-zinc-200 lg:text-base 2xl:text-lg'>
+            {language === 'cs' &&
+              'Rád spojuji technické dovednosti s kreativitou, abych vytvářel funkční a estetické projekty. Baví mě přinášet nápady k životu – jak v digitálním světě, tak skrze objektiv fotoaparátu.'}
+            {language === 'en' &&
+              'I like to combine technical skills with creativity to create functional and aesthetic projects. I enjoy bringing ideas to life - both in the digital world and through the lens of a camera.'}
           </p>
         </div>
         <motion.img
