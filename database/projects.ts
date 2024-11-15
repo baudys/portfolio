@@ -5,9 +5,13 @@ export const projects = [
     url: 'https://farmahajek.cz',
     href: '/projects/farmahajek',
     year: 2023,
-    descriptionEn: 'Family farm',
-    descriptionCs: 'Rodinná farma',
+    descriptionEn:
+      'The Hájek Farm website is designed as a modern presentation of the farm and its activities. It includes a blog with the latest news, a newsletter for regular information, its own interactive map and an overview gallery. Thanks to its functional design and user-friendly interface, it ensures easy communication and clear presentation of the farm to visitors.',
+    descriptionCs:
+      'Webová stránka Farma Hájek je navržena jako moderní prezentace farmy a jejích aktivit. Obsahuje blog s aktuálními novinkami, newsletter pro pravidelné informace, vlastní interaktivní mapu a přehlednou galerii. Díky funkčnímu designu a uživatelsky přívětivému rozhraní zajišťuje snadnou komunikaci a přehledné představení farmy návštěvníkům.',
     mockup: '/projects/farmahajek/mockup.webp',
+    featuresCs: ['Blog', 'Newsletter', 'Vlastní Mapa', 'Galerie'],
+    featuresEn: ['Blog', 'Newsletter', 'Custom Map', 'Gallery'],
     technologies: [
       'nextjs',
       'typescript',
@@ -29,11 +33,15 @@ export const projects = [
     url: 'https://rozmluv.se',
     href: '/projects/rozmluvse',
     year: 2024,
-    descriptionEn: 'Language studio',
-    descriptionCs: 'Jazykové studio',
+    descriptionEn:
+      'The Rozmluv.se website is a modern presentation focused on language education. It includes a CMS for easy content management, a blog, a newsletter, support for multiple languages and forms for contact or registration. Thanks to its clear design and practical features, it offers a pleasant user experience and effective communication with visitors.',
+    descriptionCs:
+      'Webová stránka Rozmluv.se je moderní prezentací zaměřenou na jazykové vzdělávání. Obsahuje CMS pro snadnou správu obsahu, blog, newsletter, podporu více jazyků a formuláře pro kontakt či registraci. Díky přehlednému designu a praktickým funkcím nabízí příjemný uživatelský zážitek a efektivní komunikaci s návštěvníky.',
     mockup: '/projects/rozmluvse/mockup.webp',
     iphone: '/projects/rozmluvse/iphone.webp',
     macbook: '/projects/rozmluvse/macbook.webp',
+    featuresCs: ['CMS', 'Blog', 'Newsletter', 'Několik Jazyků', 'Formuláře'],
+    featuresEn: ['CMS', 'Blog', 'Newsletter', 'Multiple Languages', 'Forms'],
     technologies: [
       'nextjs',
       'typescript',
@@ -61,11 +69,15 @@ export const projects = [
     url: 'https://pneuservisbaudys.cz',
     href: '/projects/pneuservisbaudys',
     year: 2022,
-    descriptionEn: 'Local tyre workshop',
-    descriptionCs: 'Lokální pneuservis',
+    descriptionEn:
+      "The website for Pneuservis Baudyš was created with an emphasis on modern design and functionality. It includes interactive 3D models and an integrated Google Map for easy customer orientation. The project combines aesthetics, technology and user-friendliness to effectively present the tire shop's services and facilitate communication with customers.",
+    descriptionCs:
+      'Webová stránka pro Pneuservis Baudyš byla vytvořena s důrazem na moderní design a funkčnost. Obsahuje interaktivní 3D modely a integrovanou Google Mapu pro snadnou orientaci zákazníků. Projekt kombinuje estetiku, technologie a uživatelskou přívětivost, aby efektivně prezentoval služby pneuservisu a usnadnil komunikaci se zákazníky.',
     mockup: '/projects/pneuservisbaudys/mockup.webp',
     iphone: '/projects/pneuservisbaudys/iphone.webp',
     macbook: '/projects/pneuservisbaudys/macbook.webp',
+    featuresCs: ['3D Modely', 'Google Mapa'],
+    featuresEn: ['3D Model', 'Google Map'],
     technologies: [
       'react',
       'vite',
@@ -79,14 +91,34 @@ export const projects = [
   {
     name: 'Dhiffushi Inn',
     slug: 'dhiffushiinn',
-    url: 'https://dhiffushi-inn.vercel.app',
+    url: 'https://dhiffushi-inn.com',
     href: '/projects/dhiffushiinn',
     year: 2024,
-    descriptionEn: 'Maldivian guesthouse',
-    descriptionCs: 'Maledivský penzion',
+    descriptionEn:
+      'The website for Dhiffushi Inn combines a CMS, a booking engine, database connectivity, multi-language support, intuitive forms and an interactive map. The design is responsive and user-friendly, focusing on speed and ease of management. The project provides a modern and functional hotel presentation with an emphasis on visitor convenience.',
+    descriptionCs:
+      'Webová stránka pro Dhiffushi Inn spojuje CMS, rezervační systém, databázové napojení, podporu více jazyků, intuitivní formuláře a interaktivní mapu. Design je responzivní a uživatelsky přívětivý, zaměřený na rychlost a jednoduchou správu. Projekt zajišťuje moderní a funkční prezentaci hotelu s důrazem na pohodlí návštěvníků.',
     mockup: '/projects/dhiffushiinn/mockup.webp',
     iphone: '/projects/dhiffushiinn/iphone.webp',
     macbook: '/projects/dhiffushiinn/macbook.webp',
+    featuresCs: [
+      'CMS',
+      'Booking Systém',
+      'Napojení na Databázi',
+      'Několik Jazyků',
+      'Formuláře',
+      'Vlastní Mapa',
+      'Galerie',
+    ],
+    featuresEn: [
+      'CMS',
+      'Booking System',
+      'Database Connection',
+      'Multiple Languages',
+      'Forms',
+      'Custom Map',
+      'Gallery',
+    ],
     technologies: [
       'nextjs',
       'typescript',

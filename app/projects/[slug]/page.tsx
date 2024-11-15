@@ -48,6 +48,8 @@ export default function Page({ params }: PageProps) {
     descriptionEn,
     descriptionCs,
     technologies,
+    featuresEn,
+    featuresCs,
   } = projects.filter((data: any) => data.slug === params.slug)[0]
 
   return (
@@ -59,18 +61,22 @@ export default function Page({ params }: PageProps) {
           current={name}
         />
 
-        <div className='mb-10 grid md:grid-cols-[3fr_1fr] lg:mb-20 xl:mb-32'>
+        <div className='mb-10 grid gap-32 md:grid-cols-[3fr_1fr] lg:mb-20 xl:mb-32'>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
             className='flex flex-col md:justify-center'
           >
-            <div className='flex justify-between md:justify-normal md:gap-20'>
+            <h1 className='mb-14 hidden text-center font-semibold md:text-left lg:block lg:text-6xl xl:text-7xl'>
+              {name}
+            </h1>
+
+            <div className='flex flex-col justify-between gap-4 md:flex-row md:justify-normal md:gap-20'>
               <div className='flex flex-col'>
                 <h4 className='font-medium uppercase text-zinc-400'>
-                  {language === 'en' && 'client'}
-                  {language === 'cs' && 'klient'}
+                  {language === 'en' && 'web'}
+                  {language === 'cs' && 'web'}
                 </h4>
                 <Cursor type='external'>
                   <Link
@@ -78,10 +84,11 @@ export default function Page({ params }: PageProps) {
                     target='_blank'
                     className='cursor-none text-2xl font-light underline lg:text-3xl'
                   >
-                    {name}
+                    {url}
                   </Link>
                 </Cursor>
               </div>
+
               <div className='flex flex-col'>
                 <h4 className='font-medium uppercase text-zinc-400'>
                   {language === 'en' && 'year'}
@@ -91,11 +98,12 @@ export default function Page({ params }: PageProps) {
               </div>
             </div>
 
-            <h1 className='mt-14 hidden text-center font-semibold md:text-left lg:block lg:text-6xl xl:text-7xl 2xl:text-8xl'>
-              {language === 'en' && <>{descriptionEn}</>}
-              {language === 'cs' && <>{descriptionCs}</>}
-            </h1>
+            <p className='mt-4 text-justify text-lg md:mt-12'>
+              {language === 'en' && descriptionEn}
+              {language === 'cs' && descriptionCs}
+            </p>
           </motion.div>
+
           <motion.img
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -225,6 +233,28 @@ export default function Page({ params }: PageProps) {
               </div>
             ))}
           </Marquee>
+        </motion.div>
+
+        <Title label={language === 'en' ? 'Features' : 'Obsahuje'} />
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className='mb-10 lg:mb-20 xl:mb-32'
+        >
+          {language === 'en' ? (
+            <>
+              {featuresEn?.map((feature) => (
+                <h3 className='text-2xl'>~ {feature}</h3>
+              ))}
+            </>
+          ) : (
+            <>
+              {featuresCs?.map((feature) => (
+                <h3 className='text-2xl'>~ {feature}</h3>
+              ))}
+            </>
+          )}
         </motion.div>
 
         <Title label={language === 'en' ? 'Showcase' : 'Ukázka'} />
