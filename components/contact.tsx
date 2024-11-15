@@ -28,7 +28,7 @@ export const Contact = () => {
   return (
     <Container>
       <Title
-        label={language === 'en' ? "let's work together" : 'spolupracujme'}
+        label={language === 'en' ? "Let's Work Together" : 'Spolupracujme'}
       />
       <MagicCard
         className='rounded-2xl bg-zinc-100 dark:bg-zinc-900'
