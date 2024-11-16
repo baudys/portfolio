@@ -245,13 +245,17 @@ export default function Page({ params }: PageProps) {
           {language === 'en' ? (
             <>
               {featuresEn?.map((feature) => (
-                <h3 className='text-2xl'>~ {feature}</h3>
+                <h3 key={feature} className='text-2xl'>
+                  ~ {feature}
+                </h3>
               ))}
             </>
           ) : (
             <>
               {featuresCs?.map((feature) => (
-                <h3 className='text-2xl'>~ {feature}</h3>
+                <h3 key={feature} className='text-2xl'>
+                  ~ {feature}
+                </h3>
               ))}
             </>
           )}
@@ -268,12 +272,12 @@ export default function Page({ params }: PageProps) {
         />
         {images.map((image) => (
           <motion.img
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
             key={image}
             src={image}
             alt='image'
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
             className='mb-10 last:mb-0 lg:mb-20'
           />
         ))}
