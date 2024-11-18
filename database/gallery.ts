@@ -230,11 +230,11 @@ export const gallery = [
 
   {
     image: '/gallery/renda/1.webp',
-    categories: ['people', 'animals'],
+    categories: ['people'],
   },
   {
     image: '/gallery/renda/2.webp',
-    categories: ['people', 'animals'],
+    categories: ['animals'],
   },
 
   {
