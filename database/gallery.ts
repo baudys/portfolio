@@ -230,11 +230,11 @@ export const gallery = [
 
   {
     image: '/gallery/renda/1.webp',
-    categories: ['people'],
+    categories: ['people', 'animals'],
   },
   {
     image: '/gallery/renda/2.webp',
-    categories: ['people'],
+    categories: ['people', 'animals'],
   },
 
   {
@@ -290,19 +290,19 @@ export const gallery = [
 
   {
     image: '/gallery/sumava/1.webp',
-    categories: ['travel', 'animals'],
+    categories: ['nature', 'animals'],
   },
   {
     image: '/gallery/sumava/2.webp',
-    categories: ['travel'],
+    categories: ['nature'],
   },
   {
     image: '/gallery/sumava/3.webp',
-    categories: ['travel', 'people'],
+    categories: ['nature', 'people'],
   },
   {
     image: '/gallery/sumava/4.webp',
-    categories: ['travel'],
+    categories: ['nature'],
   },
 ]
 
