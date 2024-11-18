@@ -33,7 +33,7 @@ export const Hero = () => {
             {language === 'en' && "I'm Daniel! 👋 "}
             {language === 'cs' && 'jsem Daniel! 👋 '}
           </h1>
-          <p className='my-2 text-zinc-950 lg:text-lg 2xl:text-xl'>
+          <p className='mb-6 mt-4 text-zinc-950 dark:text-zinc-50 lg:text-lg 2xl:text-xl'>
             {language === 'en' && (
               <>
                 <b>Web developer</b>, <b>programmer</b>, <b>photographer</b> and{' '}
