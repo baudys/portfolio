@@ -140,4 +140,44 @@ export const projects = [
       '/projects/dhiffushiinn/5.webp',
     ],
   },
+  {
+    name: 'Smart Form',
+    slug: 'smartform',
+    url: 'https://smart-formular.netlify.app/',
+    href: '/projects/smartform',
+    year: 2023,
+    descriptionEn:
+      'The Smart Form website is designed for efficient data and form management. It offers automatic completion of data by ID number, connection to a database for reliable storage of information and intuitive forms. Thanks to modern technologies and a simple interface, it ensures fast and easy data handling.',
+    descriptionCs:
+      'Webová stránka Smart Formulář je vytvořena pro efektivní správu dat a formulářů. Nabízí automatické doplnění údajů podle IČO, napojení na databázi pro spolehlivé ukládání informací a intuitivní formuláře. Díky moderním technologiím a jednoduchému rozhraní zajišťuje rychlou a snadnou práci s daty.',
+    mockup: '/projects/smartform/mockup.webp',
+    iphone: '/projects/smartform/iphone.webp',
+    macbook: '/projects/smartform/macbook.webp',
+    featuresCs: [
+      'Automatické Doplnění Údajů Podle IČO',
+      'Napojení na Databázi',
+      'Formuláře',
+    ],
+    featuresEn: ['Autocomplete Based on IČO', 'Database Connection', 'Forms'],
+    technologies: ['nextjs', 'tailwind', 'mongodb', 'mui'],
+    images: [],
+  },
+  {
+    name: 'Grössl',
+    slug: 'grossl',
+    url: 'https://dominikgrossl.com',
+    href: '/projects/grossl',
+    year: 2024,
+    descriptionEn:
+      'The Dominik Grossl website is a modern and visually engaging presentation that stands out with complex animations. These animations create a dynamic and interactive experience that highlights the creativity and technological maturity of the project. The design is designed with attention to detail, aesthetics and smooth user navigation.',
+    descriptionCs:
+      'Webová stránka Dominik Grossl je moderní a vizuálně poutavá prezentace, která vyniká komplexními animacemi. Tyto animace vytvářejí dynamický a interaktivní zážitek, který zdůrazňuje kreativitu a technologickou vyspělost projektu. Design je navržen s důrazem na detail, estetičnost a plynulou uživatelskou navigaci.',
+    mockup: '/projects/grossl/mockup.webp',
+    iphone: '/projects/grossl/iphone.webp',
+    macbook: '/projects/grossl/macbook.webp',
+    featuresCs: ['Komplexní Animace'],
+    featuresEn: ['Complex Animations'],
+    technologies: ['nextjs', 'typescript', 'tailwind', 'framer'],
+    images: [],
+  },
 ]
