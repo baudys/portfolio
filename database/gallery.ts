@@ -328,6 +328,26 @@ export const gallery = [
     image: '/gallery/welt/6.webp',
     categories: ['cars'],
   },
+  {
+    image: '/gallery/zanzibar/1.webp',
+    categories: ['travel'],
+  },
+  {
+    image: '/gallery/zanzibar/2.webp',
+    categories: ['travel', 'nature'],
+  },
+  {
+    image: '/gallery/zanzibar/3.webp',
+    categories: ['travel', 'animals'],
+  },
+  {
+    image: '/gallery/zanzibar/4.webp',
+    categories: ['travel', 'animals'],
+  },
+  {
+    image: '/gallery/zanzibar/5.webp',
+    categories: ['travel'],
+  },
 ]
 
 export const vertical = [
@@ -390,4 +410,7 @@ export const vertical = [
   '/gallery/sumava/2.webp',
   '/gallery/sumava/3.webp',
   '/gallery/welt/1.webp',
+  '/gallery/zanzibar/3.webp',
+  '/gallery/zanzibar/4.webp',
+  '/gallery/zanzibar/5.webp',
 ]
