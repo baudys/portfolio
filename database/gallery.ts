@@ -304,6 +304,30 @@ export const gallery = [
     image: '/gallery/sumava/4.webp',
     categories: ['nature'],
   },
+  {
+    image: '/gallery/welt/1.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/welt/2.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/welt/3.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/welt/4.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/welt/5.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/welt/6.webp',
+    categories: ['cars'],
+  },
 ]
 
 export const vertical = [
@@ -365,4 +389,5 @@ export const vertical = [
   '/gallery/sumava/1.webp',
   '/gallery/sumava/2.webp',
   '/gallery/sumava/3.webp',
+  '/gallery/welt/1.webp',
 ]
