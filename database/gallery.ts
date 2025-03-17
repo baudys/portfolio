@@ -348,6 +348,23 @@ export const gallery = [
     image: '/gallery/zanzibar/5.webp',
     categories: ['travel'],
   },
+
+  {
+    image: '/gallery/vojta/1.webp',
+    categories: ['animals'],
+  },
+  {
+    image: '/gallery/vojta/2.webp',
+    categories: ['animals'],
+  },
+  {
+    image: '/gallery/vojta/3.webp',
+    categories: ['animals'],
+  },
+  {
+    image: '/gallery/vojta/4.webp',
+    categories: ['animals'],
+  },
 ]
 
 export const vertical = [
@@ -413,4 +430,7 @@ export const vertical = [
   '/gallery/zanzibar/3.webp',
   '/gallery/zanzibar/4.webp',
   '/gallery/zanzibar/5.webp',
+  '/gallery/vojta/1.webp',
+  '/gallery/vojta/2.webp',
+  '/gallery/vojta/4.webp',
 ]
