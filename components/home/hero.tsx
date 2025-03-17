@@ -36,22 +36,30 @@ export const Hero = () => {
           <p className='mb-6 mt-4 text-zinc-950 dark:text-zinc-50 lg:text-lg 2xl:text-xl'>
             {language === 'en' && (
               <>
-                <b>Web developer</b>, <b>programmer</b>, <b>photographer</b> and{' '}
-                <b>designer</b>.
+                <b>Web developer</b> and <b>photographer</b>
               </>
             )}
             {language === 'cs' && (
               <>
-                <b>Webový vývojář</b>, <b>programátor</b>, <b>fotograf</b> a{' '}
-                <b>designer</b>
+                <b>Webový vývojář</b> a <b>fotograf</b>
               </>
             )}
           </p>
-          <p className='max-w-[80ch] text-justify text-sm text-zinc-800 dark:text-zinc-200 lg:text-base 2xl:text-lg'>
-            {language === 'cs' &&
-              'Rád spojuji technické dovednosti s kreativitou, abych vytvářel funkční a estetické projekty. Baví mě přinášet nápady k životu – jak v digitálním světě, tak skrze objektiv fotoaparátu.'}
-            {language === 'en' &&
-              'I like to combine technical skills with creativity to create functional and aesthetic projects. I enjoy bringing ideas to life - both in the digital world and through the lens of a camera.'}
+          <p className='text-justify text-sm text-zinc-800 dark:text-zinc-200 lg:text-base 2xl:text-lg'>
+            {language === 'cs' && (
+              <>
+                Mám rád kreativitu i techničnost, a proto tvořím estetické{' '}
+                <br className='hidden md:block' /> a funkční weby a zachycuji
+                svět skrz objektiv fotoaparátu.
+              </>
+            )}
+            {language === 'en' && (
+              <>
+                I enjoy creativity and technicality, which is why I create
+                aesthetic and functional websites and capture the world through
+                my camera lens.
+              </>
+            )}
           </p>
         </div>
         <motion.img
