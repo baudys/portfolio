@@ -37,12 +37,12 @@ export const Footer = () => {
           <FooterIcon
             name='linkedin'
             icon={Linkedin}
-            href='https://www.linkedin.com/in/ton1czech/'
+            href='https://www.linkedin.com/in/baudys/'
           />
           <FooterIcon
             name='github'
             icon={Github}
-            href='https://www.github.com/ton1czech/'
+            href='https://www.github.com/baudys/'
           />
         </motion.div>
 
