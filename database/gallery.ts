@@ -43,6 +43,26 @@ export const gallery = [
     image: '/gallery/alpina/11.webp',
     categories: ['cars'],
   },
+  {
+    image: '/gallery/alpina/12.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/alpina/13.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/alpina/14.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/alpina/15.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/alpina/16.webp',
+    categories: ['cars'],
+  },
 
   {
     image: '/gallery/animals/1.webp',
@@ -192,6 +212,18 @@ export const gallery = [
     image: '/gallery/korab/6.webp',
     categories: ['cars'],
   },
+  {
+    image: '/gallery/korab/7.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/korab/8.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/korab/9.webp',
+    categories: ['cars'],
+  },
 
   {
     image: '/gallery/liberation/1.webp',
@@ -225,6 +257,42 @@ export const gallery = [
   },
   {
     image: '/gallery/paseo/2.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/paseo/3.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/paseo/4.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/paseo/5.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/paseo/6.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/paseo/7.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/paseo/8.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/paseo/9.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/paseo/10.webp',
+    categories: ['cars'],
+  },
+  {
+    image: '/gallery/paseo/11.webp',
     categories: ['cars'],
   },
 
@@ -379,6 +447,9 @@ export const vertical = [
   '/gallery/alpina/9.webp',
   '/gallery/alpina/10.webp',
   '/gallery/alpina/11.webp',
+  '/gallery/alpina/12.webp',
+  '/gallery/alpina/13.webp',
+  '/gallery/alpina/14.webp',
   '/gallery/animals/3.webp',
   '/gallery/animals/4.webp',
   '/gallery/animals/5.webp',
@@ -403,6 +474,9 @@ export const vertical = [
   '/gallery/korab/3.webp',
   '/gallery/korab/5.webp',
   '/gallery/korab/6.webp',
+  '/gallery/korab/7.webp',
+  '/gallery/korab/8.webp',
+  '/gallery/korab/9.webp',
   '/gallery/liberation/1.webp',
   '/gallery/liberation/2.webp',
   '/gallery/mx3/1.webp',
@@ -411,6 +485,15 @@ export const vertical = [
   '/gallery/mx3/4.webp',
   '/gallery/paseo/1.webp',
   '/gallery/paseo/2.webp',
+  '/gallery/paseo/3.webp',
+  '/gallery/paseo/4.webp',
+  '/gallery/paseo/5.webp',
+  '/gallery/paseo/6.webp',
+  '/gallery/paseo/7.webp',
+  '/gallery/paseo/8.webp',
+  '/gallery/paseo/9.webp',
+  '/gallery/paseo/10.webp',
+  '/gallery/paseo/11.webp',
   '/gallery/renda/1.webp',
   '/gallery/renda/2.webp',
   '/gallery/retro/1.webp',
