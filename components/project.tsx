@@ -4,15 +4,27 @@ import Link from 'next/link'
 import { FC } from 'react'
 import { motion } from 'framer-motion'
 import { Cursor } from './cursor'
+import { useLanguage } from '@/store/use-language'
 
 interface ProjectProps {
   name: string
   year: number
   image: string
   href: string
+  badgesCs: string[]
+  badgesEn: string[]
 }
 
-export const Project: FC<ProjectProps> = ({ name, year, image, href }) => {
+export const Project: FC<ProjectProps> = ({
+  name,
+  year,
+  image,
+  href,
+  badgesCs,
+  badgesEn,
+}) => {
+  const { language } = useLanguage()
+
   return (
     <Cursor type='project'>
       <Link href={href} className='cursor-none'>
@@ -30,6 +42,25 @@ export const Project: FC<ProjectProps> = ({ name, year, image, href }) => {
                 | {year}
               </span>
             </h3>
+            <div className='flex gap-2 text-xs text-zinc-600'>
+              {language === 'en'
+                ? badgesEn.map((badge: string) => (
+                    <span
+                      key={badge}
+                      className='rounded-md bg-cyan-500/20 px-1 py-0.5'
+                    >
+                      {badge}
+                    </span>
+                  ))
+                : badgesCs.map((badge: string) => (
+                    <span
+                      key={badge}
+                      className='rounded-md bg-cyan-500/20 px-1 py-0.5'
+                    >
+                      {badge}
+                    </span>
+                  ))}
+            </div>
           </div>
         </motion.div>
       </Link>

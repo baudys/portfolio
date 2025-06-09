@@ -12,6 +12,8 @@ export const projects = [
     mockup: '/projects/flora/mockup.webp',
     featuresCs: ['Interaktivní 3D Svět', 'Nákupní Košík'],
     featuresEn: ['Interactive 3D World', 'Shopping Cart'],
+    badgesCs: ['design', 'vývoj'],
+    badgesEn: ['design', 'development'],
     technologies: [
       'nextjs',
       'typescript',
@@ -52,6 +54,8 @@ export const projects = [
       'Statistics',
       'Compact Mode',
     ],
+    badgesCs: ['design', 'vývoj'],
+    badgesEn: ['design', 'development'],
     technologies: [
       'nextjs',
       'typescript',
@@ -87,6 +91,8 @@ export const projects = [
     mockup: '/projects/farmahajek/mockup.webp',
     featuresCs: ['Blog', 'Newsletter', 'Vlastní Mapa', 'Galerie'],
     featuresEn: ['Blog', 'Newsletter', 'Custom Map', 'Gallery'],
+    badgesCs: ['design', 'vývoj'],
+    badgesEn: ['design', 'development'],
     technologies: [
       'nextjs',
       'typescript',
@@ -117,6 +123,8 @@ export const projects = [
     macbook: '/projects/rozmluvse/macbook.webp',
     featuresCs: ['CMS', 'Blog', 'Newsletter', 'Několik Jazyků', 'Formuláře'],
     featuresEn: ['CMS', 'Blog', 'Newsletter', 'Multiple Languages', 'Forms'],
+    badgesCs: ['vývoj'],
+    badgesEn: ['development'],
     technologies: [
       'nextjs',
       'typescript',
@@ -153,6 +161,8 @@ export const projects = [
     macbook: '/projects/pneuservisbaudys/macbook.webp',
     featuresCs: ['3D Modely', 'Google Mapa'],
     featuresEn: ['3D Model', 'Google Map'],
+    badgesCs: ['design', 'vývoj'],
+    badgesEn: ['design', 'development'],
     technologies: [
       'react',
       'vite',
@@ -194,6 +204,8 @@ export const projects = [
       'Custom Map',
       'Gallery',
     ],
+    badgesCs: ['design', 'vývoj'],
+    badgesEn: ['design', 'development'],
     technologies: [
       'nextjs',
       'typescript',
@@ -234,6 +246,8 @@ export const projects = [
       'Formuláře',
     ],
     featuresEn: ['Autocomplete Based on IČO', 'Database Connection', 'Forms'],
+    badgesCs: ['design', 'vývoj'],
+    badgesEn: ['design', 'development'],
     technologies: ['nextjs', 'tailwind', 'mongodb', 'mui'],
     images: [],
   },
@@ -252,6 +266,8 @@ export const projects = [
     macbook: '/projects/grossl/macbook.webp',
     featuresCs: ['Komplexní Animace'],
     featuresEn: ['Complex Animations'],
+    badgesCs: ['design', 'vývoj'],
+    badgesEn: ['design', 'development'],
     technologies: ['nextjs', 'typescript', 'tailwind', 'framer'],
     images: [],
   },
