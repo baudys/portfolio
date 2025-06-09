@@ -42,7 +42,7 @@ export const Project: FC<ProjectProps> = ({
                 | {year}
               </span>
             </h3>
-            <div className='flex gap-2 text-xs text-zinc-600'>
+            <div className='flex gap-2 text-xs text-zinc-700 dark:text-zinc-100'>
               {language === 'en'
                 ? badgesEn.map((badge: string) => (
                     <span
@@ -55,7 +55,7 @@ export const Project: FC<ProjectProps> = ({
                 : badgesCs.map((badge: string) => (
                     <span
                       key={badge}
-                      className='rounded-md bg-cyan-500/20 px-1 py-0.5'
+                      className='rounded-md bg-cyan-500/20 px-1 py-0.5 dark:bg-cyan-600/40'
                     >
                       {badge}
                     </span>
