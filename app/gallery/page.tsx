@@ -15,24 +15,34 @@ export default function GalleryPage() {
   const { language } = useLanguage()
 
   const [filtersVisible, setFiltersVisible] = useState<boolean>(false)
-  const [filter, setFilter] = useState<Category>('')
+  const [filters, setFilters] = useState<Category[]>([])
 
   const shuffledGallery = shuffle([...gallery], 3892437)
 
   const filteredGallery = shuffledGallery.filter((item) =>
-    filter === ''
+    filters.length === 0
       ? true
-      : item.categories.some((category: Category) => category === filter),
+      : item.categories.some((category: Category) =>
+          filters.includes(category),
+        ),
   )
 
   const totalItems = filteredGallery.length
   const itemsPer2Column = Math.ceil(totalItems / 2)
   const itemsPer3Column = Math.ceil(totalItems / 3)
 
+  const toggleFilter = (category: Category) => {
+    setFilters((prev) =>
+      prev.includes(category)
+        ? prev.filter((c) => c !== category)
+        : [...prev, category],
+    )
+  }
+
   return (
     <main className='mt-28 space-y-20 lg:mt-32 lg:space-y-40'>
       <Container>
-        <section className='mb-2 md:mb-6'>
+        <section className='mb-2 md:mb-3'>
           <Button
             onClick={() => setFiltersVisible((prev) => !prev)}
             variant='ghost'
@@ -44,50 +54,43 @@ export default function GalleryPage() {
           {filtersVisible && (
             <div className='mt-1.5 flex gap-2'>
               <Button
-                onClick={() => setFilter('')}
-                variant={filter === '' ? 'default' : 'secondary'}
-              >
-                {language === 'cs' && 'Bez Filtru'}
-                {language === 'en' && 'No Filter'}
-              </Button>
-              <Button
-                onClick={() => setFilter('cars')}
-                variant={filter === 'cars' ? 'default' : 'secondary'}
+                onClick={() => toggleFilter('cars')}
+                variant={filters.includes('cars') ? 'default' : 'secondary'}
               >
                 {language === 'cs' && 'Auta'}
                 {language === 'en' && 'Cars'}
               </Button>
               <Button
-                onClick={() => setFilter('travel')}
-                variant={filter === 'travel' ? 'default' : 'secondary'}
+                onClick={() => toggleFilter('travel')}
+                variant={filters.includes('travel') ? 'default' : 'secondary'}
               >
                 {language === 'cs' && 'Cestování'}
                 {language === 'en' && 'Travel'}
               </Button>
               <Button
-                onClick={() => setFilter('people')}
-                variant={filter === 'people' ? 'default' : 'secondary'}
+                onClick={() => toggleFilter('people')}
+                variant={filters.includes('people') ? 'default' : 'secondary'}
               >
                 {language === 'cs' && 'Lidé'}
                 {language === 'en' && 'People'}
               </Button>
               <Button
-                onClick={() => setFilter('animals')}
-                variant={filter === 'animals' ? 'default' : 'secondary'}
+                onClick={() => toggleFilter('animals')}
+                variant={filters.includes('animals') ? 'default' : 'secondary'}
               >
                 {language === 'cs' && 'Zvířata'}
                 {language === 'en' && 'Animals'}
               </Button>
               <Button
-                onClick={() => setFilter('nature')}
-                variant={filter === 'nature' ? 'default' : 'secondary'}
+                onClick={() => toggleFilter('nature')}
+                variant={filters.includes('nature') ? 'default' : 'secondary'}
               >
                 {language === 'cs' && 'Příroda'}
                 {language === 'en' && 'Nature'}
               </Button>
               <Button
-                onClick={() => setFilter('retro')}
-                variant={filter === 'retro' ? 'default' : 'secondary'}
+                onClick={() => toggleFilter('retro')}
+                variant={filters.includes('retro') ? 'default' : 'secondary'}
               >
                 {language === 'cs' && 'Retro'}
                 {language === 'en' && 'Retro'}
