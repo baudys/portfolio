@@ -8,9 +8,7 @@ import {
   Camera,
   FolderKanban,
   Github,
-  Gitlab,
   Globe,
-  Hammer,
   Instagram,
   Linkedin,
   LucideIcon,
@@ -19,7 +17,6 @@ import {
 import Link from 'next/link'
 import { FC } from 'react'
 import { motion } from 'framer-motion'
-import { FaDocker, FaKaggle } from 'react-icons/fa'
 import { cn } from '@/lib/utils'
 import { IconType } from 'react-icons/lib'
 import { FaTiktok } from 'react-icons/fa6'
