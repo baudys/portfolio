@@ -3,7 +3,7 @@ export const siteConfig = {
   description:
     'Fullstack developer specializing in modern web applications, React, Next.js, and innovative digital solutions',
   url: 'https://baudys.dev',
-  ogImage: 'https://baudys.dev/og-image.jpg',
+  ogImage: 'https://baudys.dev/logo.webp',
   keywords: [
     'Fullstack Developer',
     'React Developer',
@@ -43,7 +43,7 @@ export const siteConfig = {
       'Fullstack developer specializing in modern web applications, React, Next.js, and innovative digital solutions',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/logo.webp',
         width: 1200,
         height: 630,
         alt: 'Daniel Anthony Baudyš - Fullstack Developer Portfolio',
@@ -55,7 +55,7 @@ export const siteConfig = {
     title: 'Daniel Anthony Baudyš - Fullstack Developer',
     description:
       'Fullstack developer specializing in modern web applications, React, Next.js, and innovative digital solutions',
-    images: ['/og-image.jpg'],
+    images: ['/logo.webp'],
     creator: '@ton1czech',
   },
 

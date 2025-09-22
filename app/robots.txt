@@ -22,3 +22,6 @@ Sitemap: https://baudys.dev/sitemap.xml
 # Additional sitemaps if you have them
 # Sitemap: https://baudys.dev/sitemap-projects.xml
 # Sitemap: https://baudys.dev/sitemap-gallery.xml
+
+# Host directive for canonical domain
+Host: https://baudys.dev

@@ -25,6 +25,17 @@ export const metadata: Metadata = {
   openGraph: siteConfig.openGraph,
   twitter: siteConfig.twitter,
   verification: siteConfig.verification,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   category: 'technology',
   classification: 'Portfolio Website',
   referrer: 'origin-when-cross-origin',

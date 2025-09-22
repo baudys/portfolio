@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/logo.webp',
         width: 1200,
         height: 630,
         alt: 'Daniel Anthony Baudyš Portfolio Homepage',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: 'Daniel Anthony Baudyš - Fullstack Developer Portfolio',
     description:
       'Welcome to my portfolio showcasing fullstack development projects, photography, and creative work.',
-    images: ['/og-image.jpg'],
+    images: ['/logo.webp'],
   },
   alternates: {
     canonical: '/',
