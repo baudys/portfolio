@@ -39,20 +39,6 @@ export const metadata: Metadata = {
   category: 'technology',
   classification: 'Portfolio Website',
   referrer: 'origin-when-cross-origin',
-  colorScheme: 'dark light',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#000000' },
-  ],
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
-  other: {
-    'msapplication-TileColor': '#000000',
-    'msapplication-config': '/browserconfig.xml',
-  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
