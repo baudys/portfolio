@@ -44,40 +44,6 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <head>
-        <link rel='icon' href='/favicon.ico' sizes='any' />
-        <link rel='icon' href='/icon.png' type='image/png' />
-        <link rel='apple-touch-icon' href='/apple-icon.png' />
-        <link rel='manifest' href='/manifest.json' />
-        <meta name='theme-color' content='#000000' />
-        <meta name='msapplication-TileColor' content='#000000' />
-        <script
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Person',
-              name: 'Daniel Anthony Baudyš',
-              url: 'https://baudys.dev',
-              image: 'https://baudys.dev/avatar.jpg',
-              sameAs: ['https://github.com/ton1czech'],
-              jobTitle: 'Fullstack Developer',
-              worksFor: {
-                '@type': 'Organization',
-                name: 'Self-employed',
-              },
-              knowsAbout: [
-                'Web Development',
-                'React',
-                'Next.js',
-                'JavaScript',
-                'TypeScript',
-                'Fullstack Development',
-              ],
-            }),
-          }}
-        />
-      </head>
       <body
         className={cn(
           'overflow-x-hidden scroll-smooth antialiased',

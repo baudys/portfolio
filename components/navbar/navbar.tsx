@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 import LanguageSelector from './language-selector'
 import Link from 'next/link'
-import { ArrowRight, Menu } from 'lucide-react'
+import { ArrowRightIcon, MenuIcon } from 'lucide-react'
 import { useLanguage } from '@/store/use-language'
 import { AnimatePresence } from 'framer-motion'
 import { MobileNavbar } from './mobile-navbar'
@@ -75,7 +75,7 @@ export const Navbar = () => {
                     <div className='mr-2 size-3.5 rounded-full bg-green-500' />
                     {language === 'en' && <>Let&apos;s talk</>}
                     {language === 'cs' && <>Promluvme si</>}
-                    <ArrowRight className='h-4 w-4' />
+                    <ArrowRightIcon className='h-4 w-4' />
                   </ShinyButton>
                 </Link>
               </li>
@@ -85,7 +85,10 @@ export const Navbar = () => {
           <div className='flex items-center gap-2 md:hidden'>
             <ThemeToggle />
             <LanguageSelector />
-            <Menu onClick={() => setIsOpen(true)} className='cursor-pointer' />
+            <MenuIcon
+              onClick={() => setIsOpen(true)}
+              className='cursor-pointer'
+            />
           </div>
         </div>
       </nav>
