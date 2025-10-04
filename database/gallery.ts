@@ -407,23 +407,23 @@ export const gallery = [
 
   {
     image: '/gallery/civic/1.webp',
-    categories: ['animals'],
+    categories: ['cars'],
   },
   {
     image: '/gallery/civic/2.webp',
-    categories: ['animals'],
+    categories: ['cars'],
   },
   {
     image: '/gallery/civic/3.webp',
-    categories: ['animals'],
+    categories: ['cars'],
   },
   {
     image: '/gallery/civic/4.webp',
-    categories: ['animals'],
+    categories: ['cars'],
   },
   {
     image: '/gallery/civic/5.webp',
-    categories: ['animals'],
+    categories: ['cars'],
   },
 
   {
