@@ -10,6 +10,7 @@ import { Title } from '@/components/title'
 import { Breadcrumb } from '@/components/breadcrumb'
 import { Cursor } from '@/components/cursor'
 import { Marquee } from '@/components/ui/marquee'
+import { useEffect, useState } from 'react'
 import {
   SiNextdotjs,
   SiTypescript,
@@ -30,13 +31,22 @@ import {
 } from 'react-icons/si'
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export default function Page({ params }: PageProps) {
   const { language } = useLanguage()
+  const [slug, setSlug] = useState<string>('')
+
+  useEffect(() => {
+    params.then(({ slug }) => setSlug(slug))
+  }, [params])
+
+  if (!slug) {
+    return <div>Loading...</div>
+  }
 
   const {
     images,
@@ -50,7 +60,7 @@ export default function Page({ params }: PageProps) {
     technologies,
     featuresEn,
     featuresCs,
-  } = projects.filter((data: any) => data.slug === params.slug)[0]
+  } = projects.filter((data: any) => data.slug === slug)[0]
 
   return (
     <div>

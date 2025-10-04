@@ -3,15 +3,16 @@ import { projects } from '@/database/projects'
 import { siteConfig } from '@/config/site'
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const project = projects.filter((data: any) => data.slug === params.slug)[0]
+  const { slug } = await params
+  const project = projects.filter((data: any) => data.slug === slug)[0]
 
   if (!project) {
     return {
@@ -21,7 +22,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: project.name,
+    title: `${project.name} | Daniel Anthony Baudyš`,
     description:
       project.descriptionEn ||
       project.descriptionCs ||
@@ -43,7 +44,7 @@ export async function generateMetadata({
         project.descriptionEn ||
         project.descriptionCs ||
         `Explore ${project.name} - a web development project.`,
-      url: `https://baudys.dev/projects/${params.slug}`,
+      url: `https://baudys.dev/projects/${slug}`,
       siteName: siteConfig.name,
       images: [
         {
@@ -66,7 +67,7 @@ export async function generateMetadata({
       images: [project.images?.[0] || '/og-image.jpg'],
     },
     alternates: {
-      canonical: `/projects/${params.slug}`,
+      canonical: `/projects/${slug}`,
     },
   }
 }
