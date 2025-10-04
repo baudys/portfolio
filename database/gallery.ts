@@ -442,7 +442,6 @@ export const gallery = [
 
 export const vertical = [
   '/gallery/alpina/1.webp',
-  '/gallery/alpina/2.webp',
   '/gallery/alpina/3.webp',
   '/gallery/alpina/6.webp',
   '/gallery/alpina/7.webp',
