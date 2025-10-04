@@ -29,6 +29,7 @@ import {
   SiPrisma,
   SiMongodb,
 } from 'react-icons/si'
+import { Loader2 } from 'lucide-react'
 
 interface PageProps {
   params: Promise<{
@@ -45,7 +46,11 @@ export default function Page({ params }: PageProps) {
   }, [params])
 
   if (!slug) {
-    return <div>Loading...</div>
+    return (
+      <div className='grid place-content-center'>
+        <Loader2 className='animate-spin' />
+      </div>
+    )
   }
 
   const {

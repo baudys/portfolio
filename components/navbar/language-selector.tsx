@@ -6,7 +6,7 @@ import {
 import { Command, CommandGroup, CommandItem } from '@/components/ui/command'
 import { Check, ChevronsUpDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { useLanguage } from '@/store/use-language'
@@ -102,4 +102,22 @@ const LanguageSelector = () => {
   )
 }
 
-export default LanguageSelector
+const LanguageSelectorWithSuspense = () => {
+  return (
+    <Suspense
+      fallback={
+        <Button
+          variant='outline'
+          className='w-[64px] border-none bg-transparent p-0'
+        >
+          <div className='h-[30px] w-[30px] animate-pulse rounded-sm bg-muted' />
+          <ChevronsUpDown className='my-2 ml-1 size-4 shrink-0 text-zinc-900 dark:text-zinc-100' />
+        </Button>
+      }
+    >
+      <LanguageSelector />
+    </Suspense>
+  )
+}
+
+export default LanguageSelectorWithSuspense
