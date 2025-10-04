@@ -95,6 +95,13 @@ export default function GalleryPage() {
                 {language === 'cs' && 'Retro'}
                 {language === 'en' && 'Retro'}
               </Button>
+              <Button
+                onClick={() => toggleFilter('posters')}
+                variant={filters.includes('posters') ? 'default' : 'secondary'}
+              >
+                {language === 'cs' && 'Plakáty'}
+                {language === 'en' && 'Posters'}
+              </Button>
             </div>
           )}
         </section>
@@ -102,35 +109,35 @@ export default function GalleryPage() {
         <section>
           <div className='grid grid-cols-2 gap-2 md:hidden'>
             <div className='flex flex-col gap-2'>
-              {filteredGallery.slice(0, itemsPer2Column).map((item) => (
-                <Photo key={item} photo={item.image} />
+              {filteredGallery.slice(0, itemsPer2Column).map((item, i) => (
+                <Photo key={item + i} photo={item.image} />
               ))}
             </div>
             <div className='flex flex-col gap-2'>
-              {filteredGallery.slice(itemsPer2Column).map((item) => (
-                <Photo key={item} photo={item.image} />
+              {filteredGallery.slice(itemsPer2Column).map((item, i) => (
+                <Photo key={item + i} photo={item.image} />
               ))}
             </div>
           </div>
 
           <div className='hidden grid-cols-3 gap-6 md:grid'>
             <div className='flex flex-col gap-6'>
-              {filteredGallery.slice(0, itemsPer3Column).map((item) => (
-                <Photo key={item} photo={item.image} />
+              {filteredGallery.slice(0, itemsPer3Column).map((item, i) => (
+                <Photo key={item + i} photo={item.image} />
               ))}
             </div>
             <div className='flex flex-col gap-6'>
               {filteredGallery
                 .slice(itemsPer3Column, itemsPer3Column * 2)
-                .map((item) => (
-                  <Photo key={item} photo={item.image} />
+                .map((item, i) => (
+                  <Photo key={item + i} photo={item.image} />
                 ))}
             </div>
             <div className='flex flex-col gap-6'>
               {filteredGallery
                 .slice(itemsPer3Column * 2, itemsPer3Column * 3)
-                .map((item) => (
-                  <Photo key={item} photo={item.image} />
+                .map((item, i) => (
+                  <Photo key={item + i} photo={item.image} />
                 ))}
             </div>
           </div>

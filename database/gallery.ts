@@ -425,6 +425,19 @@ export const gallery = [
     image: '/gallery/civic/5.webp',
     categories: ['animals'],
   },
+
+  {
+    image: '/gallery/posters/alpina.webp',
+    categories: ['cars', 'posters'],
+  },
+  {
+    image: '/gallery/posters/paseo.webp',
+    categories: ['cars', 'posters'],
+  },
+  {
+    image: '/gallery/posters/xedos.webp',
+    categories: ['cars', 'posters'],
+  },
 ]
 
 export const vertical = [

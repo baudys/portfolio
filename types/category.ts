@@ -6,3 +6,4 @@ export declare type Category =
   | 'animals'
   | 'nature'
   | 'retro'
+  | 'posters'
