@@ -64,7 +64,7 @@ export const Project: FC<ProjectProps> = ({
                       target='_blank'
                       rel='noopener noreferrer'
                       onClick={(e) => e.stopPropagation()}
-                      className='cursor-none rounded-md bg-orange-500/20 px-1 py-0.5'
+                      className='cursor-none rounded-md bg-zinc-400/20 px-1 py-0.5 dark:bg-white/20'
                     >
                       {creditsEn?.label}{' '}
                       <span className='font-bold underline'>
@@ -78,7 +78,7 @@ export const Project: FC<ProjectProps> = ({
                       target='_blank'
                       rel='noopener noreferrer'
                       onClick={(e) => e.stopPropagation()}
-                      className='cursor-none rounded-md bg-orange-500/20 px-1 py-0.5'
+                      className='cursor-none rounded-md bg-zinc-400/20 px-1 py-0.5 dark:bg-white/20'
                     >
                       {creditsCs?.label}{' '}
                       <span className='font-bold underline'>
@@ -91,7 +91,7 @@ export const Project: FC<ProjectProps> = ({
               ? badgesEn.map((badge: string) => (
                   <span
                     key={badge}
-                    className='rounded-md bg-cyan-500/20 px-1 py-0.5'
+                    className='rounded-md bg-zinc-400/20 px-1 py-0.5 dark:bg-white/20'
                   >
                     {badge}
                   </span>
@@ -99,7 +99,7 @@ export const Project: FC<ProjectProps> = ({
               : badgesCs.map((badge: string) => (
                   <span
                     key={badge}
-                    className='rounded-md bg-cyan-500/20 px-1 py-0.5 dark:bg-cyan-600/40'
+                    className='rounded-md bg-zinc-400/20 px-1 py-0.5 dark:bg-white/20'
                   >
                     {badge}
                   </span>
