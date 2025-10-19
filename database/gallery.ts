@@ -12,6 +12,10 @@ export const gallery = [
     categories: ['cars'],
   },
   {
+    image: '/gallery/alpina/4.webp',
+    categories: ['cars'],
+  },
+  {
     image: '/gallery/alpina/6.webp',
     categories: ['cars'],
   },
@@ -443,6 +447,7 @@ export const gallery = [
 export const vertical = [
   '/gallery/alpina/1.webp',
   '/gallery/alpina/3.webp',
+  '/gallery/alpina/4.webp',
   '/gallery/alpina/6.webp',
   '/gallery/alpina/7.webp',
   '/gallery/alpina/8.webp',
