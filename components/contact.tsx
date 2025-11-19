@@ -93,13 +93,11 @@ export const Contact = () => {
                   <span
                     onClick={() => {
                       setClicked(true)
-                      navigator.clipboard.writeText(
-                        'danielanthonybaudys@gmail.com',
-                      )
+                      navigator.clipboard.writeText('daniel@baudys.dev')
                     }}
                     className='relative cursor-pointer font-bold after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:origin-left after:scale-x-0 after:rounded-lg after:bg-black after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100 dark:after:bg-white'
                   >
-                    danielanthonybaudys@gmail.com
+                    daniel@baudys.dev
                   </span>
 
                   <motion.span
