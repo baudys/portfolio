@@ -28,6 +28,7 @@ import {
   SiVite,
   SiPrisma,
   SiMongodb,
+  SiGithub,
 } from 'react-icons/si'
 import { Loader2 } from 'lucide-react'
 
@@ -35,6 +36,13 @@ interface PageProps {
   params: Promise<{
     slug: string
   }>
+}
+
+function formatUrl(url: string): string {
+  if (!url || url === '-') return url
+  let formatted = url.replace(/^https?:\/\//, '').replace(/\/$/, '')
+  formatted = formatted.replace(/\.vercel\.app$/, '')
+  return formatted
 }
 
 export default function Page({ params }: PageProps) {
@@ -65,6 +73,7 @@ export default function Page({ params }: PageProps) {
     technologies,
     featuresEn,
     featuresCs,
+    github,
   } = projects.filter((data: any) => data.slug === slug)[0]
 
   return (
@@ -83,26 +92,46 @@ export default function Page({ params }: PageProps) {
             transition={{ delay: 0.3 }}
             className='flex flex-col md:justify-center'
           >
-            <h1 className='mb-14 hidden text-center font-semibold md:text-left lg:block lg:text-6xl xl:text-7xl'>
+            <h1 className='hidden text-center font-semibold md:text-left lg:block lg:text-6xl xl:text-7xl'>
               {name}
             </h1>
 
-            <div className='flex flex-col justify-between gap-4 md:flex-row md:justify-normal md:gap-20'>
+            <div className='mt-14 flex flex-col justify-between gap-4 md:flex-row md:justify-normal md:gap-20'>
               <div className='flex flex-col'>
                 <h4 className='font-medium uppercase text-zinc-400'>
                   {language === 'en' && 'web'}
                   {language === 'cs' && 'web'}
                 </h4>
-                <Cursor type='external'>
-                  <Link
-                    href={url}
-                    target='_blank'
-                    className='cursor-none text-2xl font-light underline lg:text-3xl'
-                  >
-                    {url}
-                  </Link>
-                </Cursor>
+                <div className='flex items-center gap-3'>
+                  <Cursor type='external'>
+                    <Link
+                      href={url}
+                      target='_blank'
+                      className='cursor-none text-2xl font-light underline lg:text-3xl'
+                    >
+                      {formatUrl(url)}
+                    </Link>
+                  </Cursor>
+                </div>
               </div>
+
+              {github && (
+                <div className='flex flex-col'>
+                  <h4 className='font-medium uppercase text-zinc-400'>
+                    GitHub
+                  </h4>
+
+                  <Cursor type='external'>
+                    <Link
+                      href={github}
+                      target='_blank'
+                      className='text-2xl font-light lg:text-3xl'
+                    >
+                      <SiGithub />
+                    </Link>
+                  </Cursor>
+                </div>
+              )}
 
               <div className='flex flex-col'>
                 <h4 className='font-medium uppercase text-zinc-400'>

@@ -3,6 +3,7 @@ export const projects = [
     name: 'Stadioner',
     slug: 'stadioner',
     url: 'https://stadioner.cz',
+    github: 'https://github.com/stadioner/stadioner',
     href: '/projects/stadioner',
     year: 2025,
     descriptionEn:
@@ -52,6 +53,7 @@ export const projects = [
     name: 'My Ride',
     slug: 'myride',
     url: 'https://myride.top',
+    github: 'https://github.com/myride-top/myride',
     href: '/projects/myride',
     year: 2025,
     descriptionEn:
@@ -101,6 +103,7 @@ export const projects = [
     name: 'Flora',
     slug: 'flora',
     url: 'https://flora-interactive.vercel.app',
+    github: 'https://github.com/baudys/flora-interactive',
     href: '/projects/flora',
     year: 2025,
     descriptionEn:
@@ -132,7 +135,7 @@ export const projects = [
   {
     name: 'EasyMarket',
     slug: 'easymarket',
-    url: '',
+    url: '-',
     href: '/projects/easymarket',
     year: 2025,
     descriptionEn:
@@ -180,6 +183,7 @@ export const projects = [
     name: 'Rozmluv se',
     slug: 'rozmluvse',
     url: 'https://rozmluv.se',
+    github: 'https://github.com/baudys/rozmluvse',
     href: '/projects/rozmluvse',
     year: 2024,
     descriptionEn:
@@ -261,6 +265,7 @@ export const projects = [
     name: 'Dhiffushi Inn',
     slug: 'dhiffushiinn',
     url: 'https://dhiffushi-inn.com',
+    github: 'https://github.com/baudys/dhiffushi-inn',
     href: '/projects/dhiffushiinn',
     year: 2024,
     descriptionEn:
