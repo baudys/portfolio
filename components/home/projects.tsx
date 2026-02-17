@@ -1,21 +1,23 @@
-'use client'
-
-import { useTranslations } from 'next-intl'
-import { projects } from '@/database/projects'
+import { getTranslations } from 'next-intl/server'
+import { featuredProjectCards } from '@/lib/project-cards'
 import { Container } from '../container'
 import { Project } from '../project'
 import { SeeAll } from '../see-all'
 import { Title } from '../title'
 
-export const Projects = () => {
-  const t = useTranslations('home')
+interface HomeProjectsProps {
+  locale: string
+}
+
+export const Projects = async ({ locale }: HomeProjectsProps) => {
+  const t = await getTranslations({ locale, namespace: 'home' })
 
   return (
     <Container>
       <Title label={t('projectsTitle')} />
 
       <div className='grid gap-20 sm:grid-cols-2'>
-        {projects.slice(0, 2).map((project) => (
+        {featuredProjectCards.map((project) => (
           <Project key={project.slug} project={project} />
         ))}
       </div>

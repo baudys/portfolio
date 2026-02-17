@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { Mail, Phone } from 'lucide-react'
-import { useTheme } from 'next-themes'
 import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { Container } from './container'
@@ -15,7 +14,6 @@ import { MagicCard } from './ui/magic-card'
 export const Contact = () => {
   const tContact = useTranslations('contact')
   const tCommon = useTranslations('common')
-  const { theme } = useTheme()
 
   const [clicked, setClicked] = useState(false)
 
@@ -31,10 +29,7 @@ export const Contact = () => {
     <Container>
       <Title label={tContact('title')} />
 
-      <MagicCard
-        className='rounded-2xl bg-zinc-100 dark:bg-zinc-900'
-        gradientColor={theme === 'dark' ? '#262626' : '#E0E0E0'}
-      >
+      <MagicCard className='rounded-2xl bg-zinc-100 dark:bg-zinc-900'>
         <BorderBeam className='rounded-2xl' />
 
         <div className='p-4 shadow-sm md:p-10'>

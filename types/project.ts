@@ -36,3 +36,17 @@ export interface Project {
   creditsEn?: ProjectCredits
   creditsEs?: ProjectCredits
 }
+
+export type ProjectCard = Pick<
+  Project,
+  | 'name'
+  | 'slug'
+  | 'year'
+  | 'mockup'
+  | 'badgesCs'
+  | 'badgesEn'
+  | 'badgesEs'
+  | 'creditsCs'
+  | 'creditsEn'
+  | 'creditsEs'
+>

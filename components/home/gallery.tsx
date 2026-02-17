@@ -1,17 +1,16 @@
-'use client'
-
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { vertical } from '@/database/gallery'
-import { useHydratedRandomizedList } from '@/hooks/use-hydrated-randomized-list'
 import { Container } from '../container'
 import { Photo } from '../gallery/photo'
 import { SeeAll } from '../see-all'
 import { Title } from '../title'
 
-export const Gallery = () => {
-  const t = useTranslations('home')
+interface HomeGalleryProps {
+  locale: string
+}
 
-  const shuffledGallery = useHydratedRandomizedList(vertical)
+export const Gallery = async ({ locale }: HomeGalleryProps) => {
+  const t = await getTranslations({ locale, namespace: 'home' })
 
   return (
     <section>
@@ -19,13 +18,13 @@ export const Gallery = () => {
         <Title label={t('galleryTitle')} />
 
         <div className='hidden md:grid md:grid-cols-3 md:gap-6'>
-          {shuffledGallery.slice(0, 3).map((photo) => (
+          {vertical.slice(0, 3).map((photo) => (
             <Photo key={photo.image} photo={photo} />
           ))}
         </div>
 
         <div className='grid grid-cols-2 gap-2 md:hidden'>
-          {shuffledGallery.slice(0, 2).map((photo) => (
+          {vertical.slice(0, 2).map((photo) => (
             <Photo key={photo.image} photo={photo} />
           ))}
         </div>

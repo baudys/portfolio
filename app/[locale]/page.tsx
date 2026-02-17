@@ -50,12 +50,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default function HomePage() {
+export default async function HomePage({ params }: PageProps) {
+  const { locale } = await params
+
   return (
     <main className='mt-28 space-y-20 lg:mt-32 lg:space-y-40'>
       <Hero />
-      <Projects />
-      <Gallery />
+      <Projects locale={locale} />
+      <Gallery locale={locale} />
       <Contact />
     </main>
   )

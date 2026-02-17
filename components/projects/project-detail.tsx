@@ -28,7 +28,7 @@ import { Title } from '@/components/title'
 import { Marquee } from '@/components/ui/marquee'
 import { ImageWithSkeleton } from '@/components/ui/image-with-skeleton'
 import type { AppLocale } from '@/i18n/locales'
-import { getLocalizedList, getLocalizedText } from '@/lib/projects'
+import { getLocalizedList, getLocalizedText } from '@/lib/projects-localization'
 import type { Project } from '@/types/project'
 
 interface ProjectDetailProps {

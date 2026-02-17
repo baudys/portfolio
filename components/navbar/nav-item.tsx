@@ -15,6 +15,7 @@ export const NavItem: FC<NavItemProps> = ({ label, href }) => {
     <li>
       <Link
         href={href}
+        prefetch
         className={cn(
           'relative after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:origin-left after:scale-x-0 after:rounded-lg after:bg-muted-foreground after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100',
           isActive && 'font-bold',

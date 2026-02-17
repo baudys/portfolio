@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import { useLocale } from 'next-intl'
 import { Cursor } from '../cursor'
 import {
@@ -18,18 +17,11 @@ interface PhotoProps {
   photo: GalleryItem
 }
 
-interface PhotoDimensions {
-  width: number
-  height: number
-}
+const DEFAULT_PHOTO_WIDTH = 1600
+const DEFAULT_PHOTO_HEIGHT = 1067
 
 export const Photo = ({ photo }: PhotoProps) => {
   const locale = useLocale() as AppLocale
-  const [dimensions, setDimensions] = useState<PhotoDimensions>({
-    width: 3,
-    height: 2,
-  })
-
   const altText =
     locale === 'cs'
       ? photo.alt.cs
@@ -37,29 +29,11 @@ export const Photo = ({ photo }: PhotoProps) => {
         ? photo.alt.es
         : photo.alt.en
 
-  useEffect(() => {
-    let mounted = true
-    const image = new window.Image()
-
-    image.src = photo.image
-    image.onload = () => {
-      if (!mounted) return
-
-      setDimensions({
-        width: image.naturalWidth || 3,
-        height: image.naturalHeight || 2,
-      })
-    }
-
-    return () => {
-      mounted = false
-    }
-  }, [photo.image])
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ delay: 0.3 }}
     >
       <Dialog>
@@ -68,8 +42,8 @@ export const Photo = ({ photo }: PhotoProps) => {
             <ImageWithSkeleton
               src={photo.image}
               alt={altText}
-              width={dimensions.width}
-              height={dimensions.height}
+              width={DEFAULT_PHOTO_WIDTH}
+              height={DEFAULT_PHOTO_HEIGHT}
               sizes='(max-width: 768px) 50vw, 33vw'
               className='h-auto w-full rounded-lg'
               wrapperClassName='rounded-lg'

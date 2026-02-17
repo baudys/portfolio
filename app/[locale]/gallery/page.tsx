@@ -7,7 +7,6 @@ import { Container } from '@/components/container'
 import { Photo } from '@/components/gallery/photo'
 import { Button } from '@/components/ui/button'
 import { gallery } from '@/database/gallery'
-import { useHydratedRandomizedList } from '@/hooks/use-hydrated-randomized-list'
 import type { Category } from '@/types/category'
 import { ChevronDown } from 'lucide-react'
 
@@ -28,9 +27,7 @@ export default function GalleryPage() {
   const [filtersVisible, setFiltersVisible] = useState<boolean>(false)
   const [filters, setFilters] = useState<Category[]>([])
 
-  const shuffledGallery = useHydratedRandomizedList(gallery)
-
-  const filteredGallery = shuffledGallery.filter((item) =>
+  const filteredGallery = gallery.filter((item) =>
     filters.length === 0
       ? true
       : item.categories.some((category: Category) => filters.includes(category)),

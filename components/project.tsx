@@ -5,12 +5,12 @@ import { useLocale } from 'next-intl'
 import { Cursor } from './cursor'
 import { Link } from '@/i18n/navigation'
 import type { AppLocale } from '@/i18n/locales'
-import { getLocalizedCredits, getLocalizedList } from '@/lib/projects'
-import type { Project as ProjectRecord } from '@/types/project'
+import { getLocalizedCredits, getLocalizedList } from '@/lib/projects-localization'
+import type { ProjectCard } from '@/types/project'
 import { ImageWithSkeleton } from './ui/image-with-skeleton'
 
 interface ProjectProps {
-  project: ProjectRecord
+  project: ProjectCard
 }
 
 export const Project = ({ project }: ProjectProps) => {
@@ -38,6 +38,7 @@ export const Project = ({ project }: ProjectProps) => {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ delay: 0.3 }}
     >
       <Link

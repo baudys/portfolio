@@ -5,7 +5,7 @@ import { AnimatePresence } from 'framer-motion'
 import { ArrowRightIcon, MenuIcon } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
-import { Link } from '@/i18n/navigation'
+import { Link, useRouter } from '@/i18n/navigation'
 import { MobileNavbar } from './mobile-navbar'
 import { NavItem } from './nav-item'
 import LanguageSelector from './language-selector'
@@ -15,6 +15,7 @@ import { ImageWithSkeleton } from '../ui/image-with-skeleton'
 
 export const Navbar = () => {
   const t = useTranslations('nav')
+  const router = useRouter()
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [isTopOfTheScreen, setIsTopOfTheScreen] = useState<boolean>(true)
@@ -32,6 +33,11 @@ export const Navbar = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    void router.prefetch('/gallery')
+    void router.prefetch('/projects')
+  }, [router])
 
   return (
     <>
