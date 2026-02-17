@@ -9,6 +9,7 @@ import { siteConfig } from '@/config/site'
 import { routing } from '@/i18n/routing'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/providers/theme-provider'
+import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
 
 export const metadata: Metadata = {
@@ -64,9 +65,8 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body
-        className={cn('overflow-x-hidden scroll-smooth antialiased')}
-      >
+      <body className={cn('overflow-x-hidden scroll-smooth antialiased')}>
+        <Analytics />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute='class'
