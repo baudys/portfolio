@@ -7,7 +7,6 @@ import {
   locales,
   type AppLocale,
 } from '@/i18n/locales'
-import type { ServiceHref } from '@/lib/services'
 
 export const SITE_URL = 'https://baudys.dev'
 export const SITE_NAME = 'Daniel Anthony Baudyš'
@@ -17,7 +16,6 @@ type StaticHref =
   | '/projects'
   | '/gallery'
   | '/contact'
-  | ServiceHref
 
 type DynamicProjectHref = {
   pathname: '/projects/[slug]'

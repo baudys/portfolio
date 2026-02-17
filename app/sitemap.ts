@@ -3,7 +3,6 @@ import { projects } from '@/database/projects'
 import { locales, type AppLocale } from '@/i18n/locales'
 import type { AppHref } from '@/lib/seo'
 import { buildLanguageAlternates, getLocalizedUrl } from '@/lib/seo'
-import { serviceDefinitions } from '@/lib/services'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastProjectUpdate = projects.reduce<string>(
@@ -17,7 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/projects',
     '/gallery',
     '/contact',
-    ...serviceDefinitions.map((service) => service.href),
   ]
 
   const getPriority = (href: AppHref): number => {
