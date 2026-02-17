@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { Mail, Phone } from 'lucide-react'
-import Image from 'next/image'
 import { useTheme } from 'next-themes'
 import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
@@ -10,6 +9,7 @@ import { Container } from './container'
 import { Title } from './title'
 import { cn } from '@/lib/utils'
 import { BorderBeam } from './ui/border-beam'
+import { ImageWithSkeleton } from './ui/image-with-skeleton'
 import { MagicCard } from './ui/magic-card'
 
 export const Contact = () => {
@@ -117,13 +117,14 @@ export const Contact = () => {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <Image
+              <ImageWithSkeleton
                 src='/contact/contact.webp'
                 alt={tContact('imageAlt')}
                 width={1200}
                 height={1200}
                 sizes='(max-width: 768px) 100vw, 50vw'
                 className='h-auto w-full rounded-2xl'
+                wrapperClassName='rounded-2xl'
               />
             </motion.div>
           </div>

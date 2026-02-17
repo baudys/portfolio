@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { ArrowRightIcon, MenuIcon } from 'lucide-react'
-import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
 import { Link } from '@/i18n/navigation'
@@ -12,6 +11,7 @@ import { NavItem } from './nav-item'
 import LanguageSelector from './language-selector'
 import { ThemeToggle } from './theme-toggle'
 import ShinyButton from '../ui/shiny-button'
+import { ImageWithSkeleton } from '../ui/image-with-skeleton'
 
 export const Navbar = () => {
   const t = useTranslations('nav')
@@ -44,12 +44,13 @@ export const Navbar = () => {
           )}
         >
           <Link href='/' className='transition duration-300'>
-            <Image
+            <ImageWithSkeleton
               src='/logo.webp'
               alt='logo'
               width={48}
               height={48}
               className='h-12 w-12 transition hover:rotate-6 hover:scale-[103%]'
+              wrapperClassName='h-12 w-12'
             />
           </Link>
 

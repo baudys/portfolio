@@ -9,7 +9,7 @@ import {
   DialogTrigger,
 } from '../ui/dialog'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { ImageWithSkeleton } from '../ui/image-with-skeleton'
 
 interface PhotoProps {
   photo: string
@@ -54,25 +54,27 @@ export const Photo = ({ photo }: PhotoProps) => {
       <Dialog>
         <DialogTrigger>
           <Cursor type='photo'>
-            <Image
+            <ImageWithSkeleton
               src={photo}
               alt='photo'
               width={dimensions.width}
               height={dimensions.height}
               sizes='(max-width: 768px) 50vw, 33vw'
               className='h-auto w-full rounded-lg'
+              wrapperClassName='rounded-lg'
             />
           </Cursor>
         </DialogTrigger>
         <DialogContent className='h-[96vh] w-[98vw] max-h-[96vh] max-w-[98vw] border-none bg-transparent p-0 shadow-none sm:max-w-[98vw]'>
           <DialogTitle className='sr-only'>Photo preview</DialogTitle>
           <div className='relative h-full w-full overflow-hidden rounded-lg'>
-            <Image
+            <ImageWithSkeleton
               src={photo}
               alt='photo'
               fill
               sizes='95vw'
               className='object-contain'
+              wrapperClassName='h-full w-full rounded-lg'
             />
           </div>
         </DialogContent>

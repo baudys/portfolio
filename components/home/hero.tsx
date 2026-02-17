@@ -3,9 +3,9 @@
 import Clock from 'react-live-clock'
 import { motion } from 'framer-motion'
 import { MapPin } from 'lucide-react'
-import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { Container } from '@/components/container'
+import { ImageWithSkeleton } from '@/components/ui/image-with-skeleton'
 import WordRotate from '../ui/word-rotate'
 
 export const Hero = () => {
@@ -44,13 +44,14 @@ export const Hero = () => {
         </div>
 
         <motion.div>
-          <Image
+          <ImageWithSkeleton
             src='/home/hero.webp'
             alt='portrait photo'
             width={1200}
             height={1200}
             sizes='(max-width: 768px) 100vw, 50vw'
             className='h-auto w-full rounded-full'
+            wrapperClassName='rounded-full'
           />
         </motion.div>
       </Container>

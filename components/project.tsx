@@ -1,13 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { useLocale } from 'next-intl'
 import { Cursor } from './cursor'
 import { Link } from '@/i18n/navigation'
 import type { AppLocale } from '@/i18n/locales'
 import { getLocalizedCredits, getLocalizedList } from '@/lib/projects'
 import type { Project as ProjectRecord } from '@/types/project'
+import { ImageWithSkeleton } from './ui/image-with-skeleton'
 
 interface ProjectProps {
   project: ProjectRecord
@@ -44,7 +44,7 @@ export const Project = ({ project }: ProjectProps) => {
         href={{ pathname: '/projects/[slug]', params: { slug: project.slug } }}
       >
         <Cursor type='project'>
-          <Image
+          <ImageWithSkeleton
             src={project.mockup}
             alt={project.name}
             width={1600}

@@ -1,15 +1,15 @@
 'use client'
 
-import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
+import { ImageWithSkeleton } from '@/components/ui/image-with-skeleton'
 
 export default function LocaleNotFound() {
   const t = useTranslations('notFound')
 
   return (
     <div className='mb-20 mt-40 grid place-content-center lg:mb-32 lg:mt-60'>
-      <Image
+      <ImageWithSkeleton
         src='/logo.webp'
         alt='logo'
         width={200}

@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import {
   SiFramer,
   SiGithub,
@@ -27,6 +26,7 @@ import { Container } from '@/components/container'
 import { Cursor } from '@/components/cursor'
 import { Title } from '@/components/title'
 import { Marquee } from '@/components/ui/marquee'
+import { ImageWithSkeleton } from '@/components/ui/image-with-skeleton'
 import type { AppLocale } from '@/i18n/locales'
 import { getLocalizedList, getLocalizedText } from '@/lib/projects'
 import type { Project } from '@/types/project'
@@ -278,7 +278,7 @@ export const ProjectDetail = ({ project }: ProjectDetailProps) => {
         </motion.div>
 
         <motion.div {...fadeIn} className='mt-10 lg:mt-0'>
-          <Image
+          <ImageWithSkeleton
             src={project.iphone}
             alt={project.name}
             width={900}
@@ -314,7 +314,7 @@ export const ProjectDetail = ({ project }: ProjectDetailProps) => {
 
       <Title label={t('projectDetail.showcase')} />
       <motion.div {...fadeIn} className='mb-10'>
-        <Image
+        <ImageWithSkeleton
           src={project.macbook}
           alt={project.name}
           width={1920}
@@ -329,7 +329,7 @@ export const ProjectDetail = ({ project }: ProjectDetailProps) => {
           className='mb-10 last:mb-0 lg:mb-20'
           {...fadeIn}
         >
-          <Image
+          <ImageWithSkeleton
             src={image}
             alt='project showcase'
             width={1920}
