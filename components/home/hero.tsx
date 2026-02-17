@@ -1,15 +1,16 @@
 'use client'
 
-import Clock from 'react-live-clock'
 import { motion } from 'framer-motion'
 import { MapPin } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Container } from '@/components/container'
 import { ImageWithSkeleton } from '@/components/ui/image-with-skeleton'
+import { LiveClock } from '@/components/ui/live-clock'
 import WordRotate from '../ui/word-rotate'
 
 export const Hero = () => {
   const t = useTranslations('home')
+  const locale = useLocale()
 
   return (
     <section>
@@ -20,11 +21,7 @@ export const Hero = () => {
             {t('location')}
             <span>
               (
-              <Clock
-                format={'HH:mm:ss'}
-                ticking={true}
-                timezone={'Europe/Prague'}
-              />
+              <LiveClock locale={locale} timeZone='Europe/Prague' />
               )
             </span>
           </p>
