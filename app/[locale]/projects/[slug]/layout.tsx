@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
+import { JsonLd } from '@/components/seo/json-ld'
 import { getProjectBySlug, getLocalizedText } from '@/lib/projects'
 import {
   resolveAppLocale,
@@ -11,6 +12,10 @@ import {
   getOpenGraphLocale,
   SITE_NAME,
 } from '@/lib/seo'
+import {
+  buildBreadcrumbListSchema,
+  buildProjectSchema,
+} from '@/lib/structured-data'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -55,6 +60,7 @@ export async function generateMetadata({
       'Next.js',
       'Fullstack Development',
       'Web Application',
+      ...(project.seo?.secondaryKeywords ?? []),
       ...project.technologies,
     ],
     openGraph: {
@@ -89,6 +95,57 @@ export async function generateMetadata({
   }
 }
 
-export default function ProjectLayout({ children }: LayoutProps) {
-  return children
+export default async function ProjectLayout({
+  children,
+  params,
+}: LayoutProps) {
+  const { locale, slug } = await params
+  const appLocale = resolveAppLocale(locale)
+  const project = getProjectBySlug(slug)
+
+  if (!project) {
+    return children
+  }
+
+  const tNav = await getTranslations({ locale: appLocale, namespace: 'nav' })
+  const description = getLocalizedText(
+    {
+      cs: project.descriptionCs,
+      en: project.descriptionEn,
+      es: project.descriptionEs,
+    },
+    appLocale,
+  )
+  const projectUrl = getLocalizedUrl(
+    { pathname: '/projects/[slug]', params: { slug } },
+    appLocale,
+  )
+  const projectSchema = buildProjectSchema(
+    project,
+    description,
+    appLocale,
+    projectUrl,
+  )
+  const breadcrumbSchema = buildBreadcrumbListSchema([
+    {
+      name: SITE_NAME,
+      item: getLocalizedUrl('/', appLocale),
+    },
+    {
+      name: tNav('projects'),
+      item: getLocalizedUrl('/projects', appLocale),
+    },
+    {
+      name: project.name,
+      item: projectUrl,
+    },
+  ])
+
+  return (
+    <>
+      <JsonLd data={projectSchema} />
+      <JsonLd data={breadcrumbSchema} />
+      {children}
+    </>
+  )
 }

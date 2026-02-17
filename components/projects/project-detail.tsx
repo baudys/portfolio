@@ -221,7 +221,7 @@ export const ProjectDetail = ({ project }: ProjectDetailProps) => {
 
       <div className='mb-10 grid gap-32 md:grid-cols-[3fr_1fr] lg:mb-20 xl:mb-32'>
         <motion.div {...fadeIn} className='flex flex-col md:justify-center'>
-          <h1 className='hidden text-center font-semibold md:text-left lg:block lg:text-6xl xl:text-7xl'>
+          <h1 className='text-center font-semibold md:text-left lg:text-6xl xl:text-7xl'>
             {project.name}
           </h1>
 
@@ -331,7 +331,7 @@ export const ProjectDetail = ({ project }: ProjectDetailProps) => {
         >
           <ImageWithSkeleton
             src={image}
-            alt='project showcase'
+            alt={`${project.name} showcase screenshot`}
             width={1920}
             height={1080}
             sizes='100vw'

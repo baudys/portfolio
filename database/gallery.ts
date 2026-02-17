@@ -1,11 +1,88 @@
 import type { Category } from '@/types/category'
+import type { AppLocale } from '@/i18n/locales'
 
-interface GalleryItem {
+interface GalleryAlt {
+  cs: string
+  en: string
+  es: string
+}
+
+interface RawGalleryItem {
   image: string
   categories: Category[]
 }
 
-export const gallery: GalleryItem[] = [
+export interface GalleryItem extends RawGalleryItem {
+  alt: GalleryAlt
+}
+
+const categoryLabels: Record<AppLocale, Record<Exclude<Category, ''>, string>> = {
+  cs: {
+    animals: 'zvířecí foto',
+    cars: 'automotive foto',
+    events: 'event foto',
+    nature: 'přírodní foto',
+    people: 'portrétní foto',
+    posters: 'poster artwork',
+    retro: 'retro foto',
+    travel: 'cestovatelské foto',
+  },
+  en: {
+    animals: 'animal photography',
+    cars: 'automotive photography',
+    events: 'event photography',
+    nature: 'nature photography',
+    people: 'portrait photography',
+    posters: 'poster artwork',
+    retro: 'retro photography',
+    travel: 'travel photography',
+  },
+  es: {
+    animals: 'fotografia de animales',
+    cars: 'fotografia automotriz',
+    events: 'fotografia de eventos',
+    nature: 'fotografia de naturaleza',
+    people: 'fotografia de retrato',
+    posters: 'arte de poster',
+    retro: 'fotografia retro',
+    travel: 'fotografia de viajes',
+  },
+}
+
+const formatImageSubject = (image: string): string => {
+  const pathSegments = image.split('/').filter(Boolean)
+  const galleryFolder = pathSegments[1] ?? 'portfolio'
+  const rawName = (pathSegments[2] ?? 'shot')
+    .replace('.webp', '')
+    .replace(/[-_]/g, ' ')
+  const folderName = galleryFolder.replace(/[-_]/g, ' ')
+
+  return `${folderName} ${rawName}`.trim()
+}
+
+const createLocalizedAlt = ({ image, categories }: RawGalleryItem): GalleryAlt => {
+  const filteredCategories = categories.filter(
+    (category): category is Exclude<Category, ''> => category !== '',
+  )
+  const categoryCs = filteredCategories
+    .map((category) => categoryLabels.cs[category])
+    .join(', ')
+  const categoryEn = filteredCategories
+    .map((category) => categoryLabels.en[category])
+    .join(', ')
+  const categoryEs = filteredCategories
+    .map((category) => categoryLabels.es[category])
+    .join(', ')
+  const subject = formatImageSubject(image)
+
+  return {
+    cs: `Fotografie ${subject} (${categoryCs}).`,
+    en: `Photo of ${subject} (${categoryEn}).`,
+    es: `Fotografia de ${subject} (${categoryEs}).`,
+  }
+}
+
+const rawGallery: RawGalleryItem[] = [
   {
     image: '/gallery/alpina/1.webp',
     categories: ['cars'],
@@ -451,7 +528,12 @@ export const gallery: GalleryItem[] = [
   },
 ]
 
-export const vertical: string[] = [
+export const gallery: GalleryItem[] = rawGallery.map((item) => ({
+  ...item,
+  alt: createLocalizedAlt(item),
+}))
+
+const verticalImageSet = new Set<string>([
   '/gallery/alpina/1.webp',
   '/gallery/alpina/3.webp',
   '/gallery/alpina/4.webp',
@@ -523,4 +605,8 @@ export const vertical: string[] = [
   '/gallery/vojta/1.webp',
   '/gallery/vojta/2.webp',
   '/gallery/vojta/4.webp',
-]
+])
+
+export const vertical: GalleryItem[] = gallery.filter((item) =>
+  verticalImageSet.has(item.image),
+)

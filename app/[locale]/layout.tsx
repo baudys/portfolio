@@ -5,8 +5,12 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { Footer } from '@/components/footer/footer'
 import { Navbar } from '@/components/navbar/navbar'
+import { JsonLd } from '@/components/seo/json-ld'
 import { siteConfig } from '@/config/site'
+import { resolveAppLocale } from '@/i18n/locales'
 import { routing } from '@/i18n/routing'
+import { getLocalizedUrl } from '@/lib/seo'
+import { buildPersonSchema, buildWebSiteSchema } from '@/lib/structured-data'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/providers/theme-provider'
 import { Analytics } from '@vercel/analytics/next'
@@ -62,10 +66,18 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale)
   const messages = await getMessages()
+  const appLocale = resolveAppLocale(locale)
+  const personSchema = buildPersonSchema()
+  const webSiteSchema = buildWebSiteSchema(
+    appLocale,
+    getLocalizedUrl('/', appLocale),
+  )
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={cn('overflow-x-hidden scroll-smooth antialiased')}>
+        <JsonLd data={personSchema} />
+        <JsonLd data={webSiteSchema} />
         <Analytics />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider

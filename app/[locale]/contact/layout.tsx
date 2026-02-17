@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
+import { JsonLd } from '@/components/seo/json-ld'
 import { resolveAppLocale } from '@/i18n/locales'
 import {
   buildAlternates,
@@ -7,6 +8,7 @@ import {
   getOpenGraphLocale,
   SITE_NAME,
 } from '@/lib/seo'
+import { buildContactPointSchema } from '@/lib/structured-data'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -49,6 +51,21 @@ export async function generateMetadata({
   }
 }
 
-export default function ContactLayout({ children }: LayoutProps) {
-  return <main className='mt-28 lg:mt-32'>{children}</main>
+export default async function ContactLayout({
+  children,
+  params,
+}: LayoutProps) {
+  const { locale } = await params
+  const appLocale = resolveAppLocale(locale)
+  const contactPointSchema = buildContactPointSchema(
+    appLocale,
+    getLocalizedUrl('/contact', appLocale),
+  )
+
+  return (
+    <main className='mt-28 lg:mt-32'>
+      <JsonLd data={contactPointSchema} />
+      {children}
+    </main>
+  )
 }

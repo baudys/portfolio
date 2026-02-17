@@ -7,7 +7,7 @@ import { Container } from '@/components/container'
 import { Photo } from '@/components/gallery/photo'
 import { Button } from '@/components/ui/button'
 import { gallery } from '@/database/gallery'
-import { shuffle } from '@/lib/utils'
+import { useHydratedRandomizedList } from '@/hooks/use-hydrated-randomized-list'
 import type { Category } from '@/types/category'
 import { ChevronDown } from 'lucide-react'
 
@@ -23,11 +23,12 @@ const filterCategories: Array<Exclude<Category, ''>> = [
 
 export default function GalleryPage() {
   const t = useTranslations('gallery')
+  const tMeta = useTranslations('meta.gallery')
 
   const [filtersVisible, setFiltersVisible] = useState<boolean>(false)
   const [filters, setFilters] = useState<Category[]>([])
 
-  const shuffledGallery = shuffle([...gallery], 3892437)
+  const shuffledGallery = useHydratedRandomizedList(gallery)
 
   const filteredGallery = shuffledGallery.filter((item) =>
     filters.length === 0
@@ -50,6 +51,8 @@ export default function GalleryPage() {
   return (
     <main className='mt-28 space-y-20 lg:mt-32 lg:space-y-40'>
       <Container>
+        <h1 className='sr-only'>{tMeta('title')}</h1>
+
         <section className='mb-2 md:mb-3'>
           <Button
             onClick={() => setFiltersVisible((prev) => !prev)}
@@ -78,13 +81,13 @@ export default function GalleryPage() {
           <div className='grid grid-cols-2 gap-2 md:hidden'>
             <div className='flex flex-col gap-2'>
               {filteredGallery.slice(0, itemsPer2Column).map((item, index) => (
-                <Photo key={`${item.image}-${index}`} photo={item.image} />
+                <Photo key={`${item.image}-${index}`} photo={item} />
               ))}
             </div>
 
             <div className='flex flex-col gap-2'>
               {filteredGallery.slice(itemsPer2Column).map((item, index) => (
-                <Photo key={`${item.image}-${index}`} photo={item.image} />
+                <Photo key={`${item.image}-${index}`} photo={item} />
               ))}
             </div>
           </div>
@@ -92,7 +95,7 @@ export default function GalleryPage() {
           <div className='hidden grid-cols-3 gap-6 md:grid'>
             <div className='flex flex-col gap-6'>
               {filteredGallery.slice(0, itemsPer3Column).map((item, index) => (
-                <Photo key={`${item.image}-${index}`} photo={item.image} />
+                <Photo key={`${item.image}-${index}`} photo={item} />
               ))}
             </div>
 
@@ -100,7 +103,7 @@ export default function GalleryPage() {
               {filteredGallery
                 .slice(itemsPer3Column, itemsPer3Column * 2)
                 .map((item, index) => (
-                  <Photo key={`${item.image}-${index}`} photo={item.image} />
+                  <Photo key={`${item.image}-${index}`} photo={item} />
                 ))}
             </div>
 
@@ -108,7 +111,7 @@ export default function GalleryPage() {
               {filteredGallery
                 .slice(itemsPer3Column * 2, itemsPer3Column * 3)
                 .map((item, index) => (
-                  <Photo key={`${item.image}-${index}`} photo={item.image} />
+                  <Photo key={`${item.image}-${index}`} photo={item} />
                 ))}
             </div>
           </div>

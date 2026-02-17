@@ -43,7 +43,7 @@ export const Hero = () => {
         <motion.div>
           <ImageWithSkeleton
             src='/home/hero.webp'
-            alt='portrait photo'
+            alt='Portrait of Daniel Anthony Baudyš'
             width={1200}
             height={1200}
             sizes='(max-width: 768px) 100vw, 50vw'

@@ -4,12 +4,18 @@ export interface ProjectCredits {
   href: string
 }
 
+export interface ProjectSeo {
+  primaryKeyword: string
+  secondaryKeywords: string[]
+}
+
 export interface Project {
   name: string
   slug: string
   url: string
   href: string
   year: number
+  updatedAt: string
   descriptionEn: string
   descriptionCs: string
   descriptionEs?: string
@@ -24,6 +30,7 @@ export interface Project {
   badgesEs?: string[]
   technologies: string[]
   images: string[]
+  seo?: ProjectSeo
   github?: string
   creditsCs?: ProjectCredits
   creditsEn?: ProjectCredits

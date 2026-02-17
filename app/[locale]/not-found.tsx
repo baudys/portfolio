@@ -11,7 +11,7 @@ export default function LocaleNotFound() {
     <div className='mb-20 mt-40 grid place-content-center lg:mb-32 lg:mt-60'>
       <ImageWithSkeleton
         src='/logo.webp'
-        alt='logo'
+        alt='Daniel Anthony Baudyš logo'
         width={200}
         height={200}
         className='mx-auto mb-10'

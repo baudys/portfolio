@@ -1,23 +1,8 @@
-User-Agent: *
+User-agent: *
 Allow: /
 
+Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
-Disallow: /api/
 
-Allow: /cs/
-Allow: /en/
-Allow: /es/
-Allow: /cs/projekty/
-Allow: /en/projects/
-Allow: /es/proyectos/
-Allow: /cs/galerie/
-Allow: /en/gallery/
-Allow: /es/galeria/
-Allow: /cs/kontakt/
-Allow: /en/contact/
-Allow: /es/contacto/
-
-Crawl-delay: 1
 Sitemap: https://baudys.dev/sitemap.xml
-Host: https://baudys.dev

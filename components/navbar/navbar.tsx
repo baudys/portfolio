@@ -46,7 +46,7 @@ export const Navbar = () => {
           <Link href='/' className='transition duration-300'>
             <ImageWithSkeleton
               src='/logo.webp'
-              alt='logo'
+              alt='Daniel Anthony Baudyš logo'
               width={48}
               height={48}
               className='h-12 w-12 transition hover:rotate-6 hover:scale-[103%]'

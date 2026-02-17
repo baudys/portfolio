@@ -8,6 +8,7 @@ export const projects: Project[] = [
     github: 'https://github.com/stadioner/stadioner',
     href: '/projects/stadioner',
     year: 2025,
+    updatedAt: '2025-11-02',
     descriptionEn:
       'Stadioner is a local brewery in Kout na Šumavě. The website showcases the beer lineup, news and events, interactive venue maps, and a drinks configurator. It is multilingual, includes a newsletter, subtle animations, CMS-driven content, and cookie compliance.',
     descriptionCs:
@@ -56,6 +57,14 @@ export const projects: Project[] = [
       'sanity',
       'leaflet',
     ],
+    seo: {
+      primaryKeyword: 'multilingual brewery website',
+      secondaryKeywords: [
+        'next.js brewery web development',
+        'interactive map website',
+        'cms website implementation',
+      ],
+    },
     images: [
       '/projects/stadioner/1.webp',
       '/projects/stadioner/2.webp',
@@ -70,6 +79,7 @@ export const projects: Project[] = [
     github: 'https://github.com/myride-top/myride',
     href: '/projects/myride',
     year: 2025,
+    updatedAt: '2025-10-15',
     descriptionEn:
       'My Ride is a community for car enthusiasts to showcase their cars and builds. Create your garage, post updates and mods, track maintenance, and follow other rides.',
     descriptionCs:
@@ -118,6 +128,14 @@ export const projects: Project[] = [
       'uploadThing',
       'prisma',
     ],
+    seo: {
+      primaryKeyword: 'community web application',
+      secondaryKeywords: [
+        'supabase social platform',
+        'next.js app development',
+        'fullstack product development',
+      ],
+    },
     images: [
       '/projects/myride/1.webp',
       '/projects/myride/2.webp',
@@ -131,6 +149,7 @@ export const projects: Project[] = [
     github: 'https://github.com/baudys/flora-interactive',
     href: '/projects/flora',
     year: 2025,
+    updatedAt: '2025-09-09',
     descriptionEn:
       'The Flora Interactive website features a unique interactive 3D world and a fully functional shopping cart. The project merges cutting-edge technology with attractive visual design, providing users with an engaging and seamless shopping experience.',
     descriptionCs:
@@ -152,6 +171,14 @@ export const projects: Project[] = [
       'shadcn',
       'radixui',
     ],
+    seo: {
+      primaryKeyword: 'interactive 3d ecommerce website',
+      secondaryKeywords: [
+        'threejs inspired product showcase',
+        'next.js ecommerce experience',
+        'framer motion ui interactions',
+      ],
+    },
     iphone: '/projects/flora/iphone.webp',
     macbook: '/projects/flora/macbook.webp',
     images: [
@@ -167,6 +194,7 @@ export const projects: Project[] = [
     url: '-',
     href: '/projects/easymarket',
     year: 2025,
+    updatedAt: '2025-08-18',
     descriptionEn:
       'EasyMarket is a tool designed to boost sales by automatically renewing listings on major online marketplaces. It features user accounts, sorting options, statistics, and a compact mode. Built with modern technologies, it provides an efficient solution for maximizing listing visibility and performance.',
     descriptionCs:
@@ -209,6 +237,14 @@ export const projects: Project[] = [
       'prisma',
       'selenium',
     ],
+    seo: {
+      primaryKeyword: 'marketplace automation platform',
+      secondaryKeywords: [
+        'listing renewal automation',
+        'next.js business application',
+        'saas workflow automation',
+      ],
+    },
     iphone: '/projects/easymarket/iphone.webp',
     macbook: '/projects/easymarket/macbook.webp',
     images: [
@@ -224,6 +260,7 @@ export const projects: Project[] = [
     github: 'https://github.com/baudys/rozmluvse',
     href: '/projects/rozmluvse',
     year: 2024,
+    updatedAt: '2024-10-12',
     descriptionEn:
       'The Rozmluv.se website is a modern presentation focused on language education. It includes a CMS for easy content management, a blog, a newsletter, support for multiple languages and forms for contact or registration. Thanks to its clear design and practical features, it offers a pleasant user experience and effective communication with visitors.',
     descriptionCs:
@@ -264,6 +301,14 @@ export const projects: Project[] = [
       'shadcn',
       'radixui',
     ],
+    seo: {
+      primaryKeyword: 'language school website development',
+      secondaryKeywords: [
+        'multilingual educational website',
+        'cms and newsletter integration',
+        'conversion-focused service website',
+      ],
+    },
     images: [
       '/projects/rozmluvse/1.webp',
       '/projects/rozmluvse/2.webp',
@@ -280,6 +325,7 @@ export const projects: Project[] = [
     url: 'https://polyuretanzabi.cz',
     href: '/projects/zabi',
     year: 2025,
+    updatedAt: '2025-06-20',
     descriptionEn:
       'Manufacturing and renovation of polyurethane parts for industrial use, including wheels, rollers, shafts, and custom components.',
     descriptionCs:
@@ -311,6 +357,14 @@ export const projects: Project[] = [
       href: 'https://matousmartak.com/',
     },
     technologies: ['nextjs', 'typescript', 'tailwind', 'shadcn', 'radixui'],
+    seo: {
+      primaryKeyword: 'industrial manufacturing website',
+      secondaryKeywords: [
+        'b2b website redesign',
+        'lead generation landing page',
+        'tailwind production website',
+      ],
+    },
     images: [
       '/projects/zabi/1.webp',
       '/projects/zabi/2.webp',
@@ -324,6 +378,7 @@ export const projects: Project[] = [
     github: 'https://github.com/baudys/dhiffushi-inn',
     href: '/projects/dhiffushiinn',
     year: 2024,
+    updatedAt: '2024-09-28',
     descriptionEn:
       'The website for Dhiffushi Inn combines a CMS, a booking engine, database connectivity, multi-language support, intuitive forms and an interactive map. The design is responsive and user-friendly, focusing on speed and ease of management. The project provides a modern and functional hotel presentation with an emphasis on visitor convenience.',
     descriptionCs:
@@ -376,6 +431,14 @@ export const projects: Project[] = [
       'prisma',
       'mongodb',
     ],
+    seo: {
+      primaryKeyword: 'hotel booking website development',
+      secondaryKeywords: [
+        'multilingual hospitality website',
+        'booking engine integration',
+        'travel website with cms',
+      ],
+    },
     images: [
       '/projects/dhiffushiinn/1.webp',
       '/projects/dhiffushiinn/2.webp',
@@ -390,6 +453,7 @@ export const projects: Project[] = [
     url: 'https://dominikgrossl.com',
     href: '/projects/grossl',
     year: 2024,
+    updatedAt: '2024-07-14',
     descriptionEn:
       'The Dominik Grossl website is a modern and visually engaging presentation that stands out with complex animations. These animations create a dynamic and interactive experience that highlights the creativity and technological maturity of the project. The design is designed with attention to detail, aesthetics and smooth user navigation.',
     descriptionCs:
@@ -406,6 +470,14 @@ export const projects: Project[] = [
     badgesEn: ['design', 'development'],
     badgesEs: ['diseño', 'desarrollo'],
     technologies: ['nextjs', 'typescript', 'tailwind', 'framer'],
+    seo: {
+      primaryKeyword: 'animation rich portfolio website',
+      secondaryKeywords: [
+        'framer motion web animations',
+        'creative developer portfolio',
+        'high-end landing page build',
+      ],
+    },
     images: [],
   },
 ]

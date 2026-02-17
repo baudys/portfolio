@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useLocale } from 'next-intl'
 import { Cursor } from '../cursor'
 import {
   Dialog,
@@ -10,9 +11,11 @@ import {
 } from '../ui/dialog'
 import { motion } from 'framer-motion'
 import { ImageWithSkeleton } from '../ui/image-with-skeleton'
+import type { GalleryItem } from '@/database/gallery'
+import type { AppLocale } from '@/i18n/locales'
 
 interface PhotoProps {
-  photo: string
+  photo: GalleryItem
 }
 
 interface PhotoDimensions {
@@ -21,16 +24,24 @@ interface PhotoDimensions {
 }
 
 export const Photo = ({ photo }: PhotoProps) => {
+  const locale = useLocale() as AppLocale
   const [dimensions, setDimensions] = useState<PhotoDimensions>({
     width: 3,
     height: 2,
   })
 
+  const altText =
+    locale === 'cs'
+      ? photo.alt.cs
+      : locale === 'es'
+        ? photo.alt.es
+        : photo.alt.en
+
   useEffect(() => {
     let mounted = true
     const image = new window.Image()
 
-    image.src = photo
+    image.src = photo.image
     image.onload = () => {
       if (!mounted) return
 
@@ -43,7 +54,7 @@ export const Photo = ({ photo }: PhotoProps) => {
     return () => {
       mounted = false
     }
-  }, [photo])
+  }, [photo.image])
 
   return (
     <motion.div
@@ -55,8 +66,8 @@ export const Photo = ({ photo }: PhotoProps) => {
         <DialogTrigger>
           <Cursor type='photo'>
             <ImageWithSkeleton
-              src={photo}
-              alt='photo'
+              src={photo.image}
+              alt={altText}
               width={dimensions.width}
               height={dimensions.height}
               sizes='(max-width: 768px) 50vw, 33vw'
@@ -69,8 +80,8 @@ export const Photo = ({ photo }: PhotoProps) => {
           <DialogTitle className='sr-only'>Photo preview</DialogTitle>
           <div className='relative h-full w-full overflow-hidden rounded-lg'>
             <ImageWithSkeleton
-              src={photo}
-              alt='photo'
+              src={photo.image}
+              alt={altText}
               fill
               sizes='95vw'
               className='object-contain'
