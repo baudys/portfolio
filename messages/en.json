@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "gallery": "Gallery",
+    "talk": "Let's talk",
+    "language": "Language selector"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "common": {
+    "seeAll": "See all",
+    "web": "web",
+    "year": "year",
+    "copied": "Copied"
+  },
+  "home": {
+    "location": "Pilsen region, Czech Republic",
+    "greeting": "I'm Daniel! 👋",
+    "roleStrongStart": "Web developer",
+    "roleStrongEnd": "photographer",
+    "roleConnector": "and",
+    "intro": "I enjoy creativity and technicality, which is why I create aesthetic and functional websites and capture the world through my camera lens.",
+    "projectsTitle": "Projects",
+    "galleryTitle": "Gallery"
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "idNo": "Id No.:",
+    "legalType": "sole trader",
+    "vat": "non VAT payer",
+    "imageAlt": "contact me"
+  },
+  "gallery": {
+    "filters": "Filters",
+    "cars": "Cars",
+    "travel": "Travel",
+    "people": "People",
+    "animals": "Animals",
+    "nature": "Nature",
+    "retro": "Retro",
+    "posters": "Posters"
+  },
+  "projectDetail": {
+    "base": "projects",
+    "technologies": "Technologies",
+    "features": "Features",
+    "showcase": "Showcase"
+  },
+  "notFound": {
+    "title": "Not Found",
+    "back": "Return Home"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "meta": {
+    "home": {
+      "title": "Home",
+      "description": "Welcome to my portfolio showcasing fullstack development projects, photography, and creative work. Explore my skills in React, Next.js, and modern web technologies.",
+      "ogTitle": "Daniel Anthony Baudyš - Fullstack Developer Portfolio",
+      "ogDescription": "Welcome to my portfolio showcasing fullstack development projects, photography, and creative work."
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Explore my portfolio of fullstack development projects including web applications, mobile apps, and innovative digital solutions built with React, Next.js, and modern technologies.",
+      "ogTitle": "Projects | Daniel Anthony Baudyš",
+      "ogDescription": "Explore my portfolio of fullstack development projects including web applications, mobile apps, and innovative digital solutions."
+    },
+    "gallery": {
+      "title": "Gallery",
+      "description": "Browse my photography portfolio featuring automotive photography, landscapes, portraits, and creative visual storytelling. Explore my passion for capturing moments through the lens.",
+      "ogTitle": "Gallery | Daniel Anthony Baudyš",
+      "ogDescription": "Browse my photography portfolio featuring automotive photography, landscapes, portraits, and creative visual storytelling."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Get in touch with me for collaboration opportunities, project inquiries, or just to say hello. I'm always open to discussing new ideas and creative projects.",
+      "ogTitle": "Contact | Daniel Anthony Baudyš",
+      "ogDescription": "Get in touch with me for collaboration opportunities, project inquiries, or just to say hello."
+    },
+    "project": {
+      "notFoundTitle": "Project not found",
+      "notFoundDescription": "The requested project could not be found."
+    }
+  }
+}

@@ -1,4 +1,11 @@
-export const gallery = [
+import type { Category } from '@/types/category'
+
+interface GalleryItem {
+  image: string
+  categories: Category[]
+}
+
+export const gallery: GalleryItem[] = [
   {
     image: '/gallery/alpina/1.webp',
     categories: ['cars'],
@@ -444,7 +451,7 @@ export const gallery = [
   },
 ]
 
-export const vertical = [
+export const vertical: string[] = [
   '/gallery/alpina/1.webp',
   '/gallery/alpina/3.webp',
   '/gallery/alpina/4.webp',

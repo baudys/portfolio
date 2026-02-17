@@ -18,8 +18,8 @@ export function seedRandom(seed: number) {
   }
 }
 
-export function shuffle(array: any[], seed: number) {
-  let random = seedRandom(seed)
+export function shuffle<T>(array: T[], seed: number): T[] {
+  const random = seedRandom(seed)
 
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(random() * (i + 1))

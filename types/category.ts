@@ -1,4 +1,4 @@
-export declare type Category =
+export type Category =
   | ''
   | 'cars'
   | 'travel'
@@ -7,3 +7,4 @@ export declare type Category =
   | 'nature'
   | 'retro'
   | 'posters'
+  | 'events'

@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "projects": "Proyectos",
+    "gallery": "Galería",
+    "talk": "Hablemos",
+    "language": "Selector de idioma"
+  },
+  "theme": {
+    "toggle": "Cambiar tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema"
+  },
+  "common": {
+    "seeAll": "Ver todo",
+    "web": "web",
+    "year": "año",
+    "copied": "Copiado"
+  },
+  "home": {
+    "location": "Región de Pilsen, República Checa",
+    "greeting": "¡Soy Daniel! 👋",
+    "roleStrongStart": "Desarrollador web",
+    "roleStrongEnd": "fotógrafo",
+    "roleConnector": "y",
+    "intro": "Disfruto la creatividad y la parte técnica, por eso creo sitios web estéticos y funcionales, y capturo el mundo a través de mi cámara.",
+    "projectsTitle": "Proyectos",
+    "galleryTitle": "Galería"
+  },
+  "contact": {
+    "title": "Trabajemos juntos",
+    "idNo": "N.º de identificación:",
+    "legalType": "autónomo",
+    "vat": "no sujeto a IVA",
+    "imageAlt": "contacto"
+  },
+  "gallery": {
+    "filters": "Filtros",
+    "cars": "Coches",
+    "travel": "Viajes",
+    "people": "Personas",
+    "animals": "Animales",
+    "nature": "Naturaleza",
+    "retro": "Retro",
+    "posters": "Pósteres"
+  },
+  "projectDetail": {
+    "base": "proyectos",
+    "technologies": "Tecnologías",
+    "features": "Características",
+    "showcase": "Presentación"
+  },
+  "notFound": {
+    "title": "No encontrado",
+    "back": "Volver al inicio"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  },
+  "meta": {
+    "home": {
+      "title": "Inicio",
+      "description": "Bienvenido a mi portafolio con proyectos fullstack, fotografía y trabajo creativo. Explora mis habilidades en React, Next.js y tecnologías web modernas.",
+      "ogTitle": "Daniel Anthony Baudyš - Portafolio Fullstack",
+      "ogDescription": "Bienvenido a mi portafolio con proyectos fullstack, fotografía y trabajo creativo."
+    },
+    "projects": {
+      "title": "Proyectos",
+      "description": "Explora mi portafolio de proyectos fullstack, incluyendo aplicaciones web, apps móviles y soluciones digitales innovadoras construidas con React y Next.js.",
+      "ogTitle": "Proyectos | Daniel Anthony Baudyš",
+      "ogDescription": "Explora mi portafolio de proyectos fullstack, incluyendo aplicaciones web, apps móviles y soluciones digitales innovadoras."
+    },
+    "gallery": {
+      "title": "Galería",
+      "description": "Explora mi portafolio fotográfico con automoción, viajes, retratos y narrativas visuales creativas.",
+      "ogTitle": "Galería | Daniel Anthony Baudyš",
+      "ogDescription": "Explora mi portafolio fotográfico con automoción, viajes, retratos y narrativas visuales creativas."
+    },
+    "contact": {
+      "title": "Contacto",
+      "description": "Contáctame para colaborar, hablar sobre un proyecto o simplemente saludar. Siempre estoy abierto a nuevas ideas y proyectos creativos.",
+      "ogTitle": "Contacto | Daniel Anthony Baudyš",
+      "ogDescription": "Contáctame para colaborar, hablar sobre un proyecto o simplemente saludar."
+    },
+    "project": {
+      "notFoundTitle": "Proyecto no encontrado",
+      "notFoundDescription": "No se pudo encontrar el proyecto solicitado."
+    }
+  }
+}

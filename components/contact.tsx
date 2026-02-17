@@ -1,40 +1,42 @@
 'use client'
 
-import { useLanguage } from '@/store/use-language'
 import { motion } from 'framer-motion'
+import { Mail, Phone } from 'lucide-react'
+import Image from 'next/image'
+import { useTheme } from 'next-themes'
+import { useTranslations } from 'next-intl'
+import { useEffect, useState } from 'react'
 import { Container } from './container'
 import { Title } from './title'
-import { Mail, Phone } from 'lucide-react'
-import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
-import { MagicCard } from './ui/magic-card'
-import { useTheme } from 'next-themes'
 import { BorderBeam } from './ui/border-beam'
+import { MagicCard } from './ui/magic-card'
 
 export const Contact = () => {
-  const { language } = useLanguage((state) => state)
+  const tContact = useTranslations('contact')
+  const tCommon = useTranslations('common')
   const { theme } = useTheme()
 
   const [clicked, setClicked] = useState(false)
 
   useEffect(() => {
-    const delay = setTimeout(() => {
+    const timeout = setTimeout(() => {
       setClicked(false)
     }, 3000)
 
-    return () => clearTimeout(delay)
+    return () => clearTimeout(timeout)
   }, [clicked])
 
   return (
     <Container>
-      <Title
-        label={language === 'en' ? "Let's Work Together" : 'Spolupracujme'}
-      />
+      <Title label={tContact('title')} />
+
       <MagicCard
         className='rounded-2xl bg-zinc-100 dark:bg-zinc-900'
         gradientColor={theme === 'dark' ? '#262626' : '#E0E0E0'}
       >
         <BorderBeam className='rounded-2xl' />
+
         <div className='p-4 shadow-sm md:p-10'>
           <div className='grid gap-4 md:grid-cols-2 md:gap-10'>
             <div className='flex flex-col justify-between'>
@@ -54,15 +56,13 @@ export const Contact = () => {
                     345 06 Kdyně
                   </p>
                   <p className='mt-4 font-semibold'>
-                    {language === 'en' && 'Id No.: '}
-                    {language === 'cs' && 'IČO: '}
-                    199 333 12
+                    {tContact('idNo')} 199 333 12
                   </p>
                   <p className='text-sm text-zinc-800 dark:text-zinc-200'>
-                    fyzická osoba
+                    {tContact('legalType')}
                   </p>
                   <p className='text-sm text-zinc-800 dark:text-zinc-200'>
-                    neplátce DPH
+                    {tContact('vat')}
                   </p>
                 </motion.div>
               </div>
@@ -106,21 +106,26 @@ export const Contact = () => {
                       clicked && 'opacity-100',
                     )}
                   >
-                    {language === 'en' && 'Copied'}
-                    {language === 'cs' && 'Zkopírováno'}
+                    {tCommon('copied')}
                   </motion.span>
                 </motion.p>
               </div>
             </div>
 
-            <motion.img
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              src='/contact/contact.webp'
-              alt='contact me'
-              className='rounded-2xl'
-            />
+            >
+              <Image
+                src='/contact/contact.webp'
+                alt={tContact('imageAlt')}
+                width={1200}
+                height={1200}
+                sizes='(max-width: 768px) 100vw, 50vw'
+                className='h-auto w-full rounded-2xl'
+              />
+            </motion.div>
           </div>
         </div>
       </MagicCard>

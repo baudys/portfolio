@@ -1,14 +1,14 @@
 'use client'
 
-import { useLanguage } from '@/store/use-language'
+import { motion } from 'framer-motion'
+import { Github, Instagram, Linkedin, Youtube } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+import { FaTiktok } from 'react-icons/fa6'
 import { Container } from '../container'
 import { FooterIcon } from './footer-icon'
-import { Github, Instagram, Linkedin, Youtube } from 'lucide-react'
-import { motion } from 'framer-motion'
-import { FaTiktok } from 'react-icons/fa6'
 
 export const Footer = () => {
-  const { language } = useLanguage()
+  const t = useTranslations('footer')
 
   return (
     <footer className='pb-12 pt-8 lg:pt-12'>
@@ -52,9 +52,7 @@ export const Footer = () => {
           transition={{ delay: 0.3 }}
           className='text-light mt-12 text-center text-xs sm:mt-4 md:text-base'
         >
-          &copy;{new Date().getFullYear()} Daniel Anthony Baudyš.
-          {language === 'cs' && <> Všechna práva vyhrazena.</>}
-          {language === 'en' && <> All rights reserved.</>}
+          &copy;{new Date().getFullYear()} Daniel Anthony Baudyš. {t('rights')}
         </motion.p>
       </Container>
     </footer>

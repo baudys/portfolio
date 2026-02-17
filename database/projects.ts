@@ -1,4 +1,6 @@
-export const projects = [
+import type { Project } from '@/types/project'
+
+export const projects: Project[] = [
   {
     name: 'Stadioner',
     slug: 'stadioner',
@@ -10,6 +12,8 @@ export const projects = [
       'Stadioner is a local brewery in Kout na Šumavě. The website showcases the beer lineup, news and events, interactive venue maps, and a drinks configurator. It is multilingual, includes a newsletter, subtle animations, CMS-driven content, and cookie compliance.',
     descriptionCs:
       'Stadioner je lokální pivovar v Koutě na Šumavě. Web představuje nabídku piv, novinky a akce, interaktivní mapy provozoven a konfigurátor nápojů. Je vícejazyčný, obsahuje newsletter, jemné animace, správu obsahu přes CMS a respektuje cookies.',
+    descriptionEs:
+      'Stadioner es una cervecería local en Kout na Šumavě. El sitio presenta la oferta de cervezas, noticias y eventos, mapas interactivos de ubicaciones y un configurador de bebidas. Es multilingüe, incluye newsletter, animaciones sutiles, contenido gestionado por CMS y cumplimiento de cookies.',
     mockup: '/projects/stadioner/mockup.webp',
     iphone: '/projects/stadioner/iphone.webp',
     macbook: '/projects/stadioner/macbook.webp',
@@ -31,8 +35,18 @@ export const projects = [
       'Cookies',
       'CMS',
     ],
+    featuresEs: [
+      'Mapas interactivos',
+      'Configurador de bebidas',
+      'Varios idiomas',
+      'Newsletter',
+      'Animaciones',
+      'Cookies',
+      'CMS',
+    ],
     badgesCs: ['design', 'vývoj'],
     badgesEn: ['design', 'development'],
+    badgesEs: ['diseño', 'desarrollo'],
     technologies: [
       'nextjs',
       'typescript',
@@ -60,6 +74,8 @@ export const projects = [
       'My Ride is a community for car enthusiasts to showcase their cars and builds. Create your garage, post updates and mods, track maintenance, and follow other rides.',
     descriptionCs:
       'My Ride je komunita pro automobilové nadšence k prezentaci aut a projektů. Vytvořte si garáž, sdílejte updaty a úpravy, sledujte údržbu a sledujte ostatní vozy.',
+    descriptionEs:
+      'My Ride es una comunidad para entusiastas del automóvil donde pueden mostrar sus coches y proyectos. Crea tu garaje, publica novedades y modificaciones, registra el mantenimiento y sigue otros vehículos.',
     mockup: '/projects/myride/mockup.webp',
     iphone: '/projects/myride/iphone.webp',
     macbook: '/projects/myride/macbook.webp',
@@ -79,8 +95,17 @@ export const projects = [
       'Image uploads',
       'Authentication',
     ],
+    featuresEs: [
+      'Perfiles de usuario',
+      'Garaje de coches',
+      'Publicaciones y comentarios',
+      'Me gusta',
+      'Subida de imágenes',
+      'Autenticación',
+    ],
     badgesCs: ['design', 'vývoj'],
     badgesEn: ['design', 'development'],
+    badgesEs: ['diseño', 'desarrollo'],
     technologies: [
       'nextjs',
       'typescript',
@@ -110,11 +135,15 @@ export const projects = [
       'The Flora Interactive website features a unique interactive 3D world and a fully functional shopping cart. The project merges cutting-edge technology with attractive visual design, providing users with an engaging and seamless shopping experience.',
     descriptionCs:
       'Webová stránka Flora Interactive nabízí unikátní interaktivní 3D svět, který zajišťuje poutavý uživatelský zážitek. Součástí je také plně funkční nákupní košík, který umožňuje snadné a intuitivní nakupování. Projekt kombinuje moderní technologie s atraktivním vizuálním zpracováním.',
+    descriptionEs:
+      'El sitio Flora Interactive ofrece un mundo 3D interactivo único y un carrito de compra totalmente funcional. El proyecto combina tecnología moderna con un diseño visual atractivo para ofrecer una experiencia de compra fluida e inmersiva.',
     mockup: '/projects/flora/mockup.webp',
     featuresCs: ['Interaktivní 3D Svět', 'Nákupní Košík'],
     featuresEn: ['Interactive 3D World', 'Shopping Cart'],
+    featuresEs: ['Mundo 3D interactivo', 'Carrito de compra'],
     badgesCs: ['design', 'vývoj'],
     badgesEn: ['design', 'development'],
+    badgesEs: ['diseño', 'desarrollo'],
     technologies: [
       'nextjs',
       'typescript',
@@ -142,6 +171,8 @@ export const projects = [
       'EasyMarket is a tool designed to boost sales by automatically renewing listings on major online marketplaces. It features user accounts, sorting options, statistics, and a compact mode. Built with modern technologies, it provides an efficient solution for maximizing listing visibility and performance.',
     descriptionCs:
       'EasyMarket je nástroj určený ke zvýšení prodejů prostřednictvím automatizovaného obnovování inzerátů na velkých online tržištích. Nabízí uživatelské účty, možnosti řazení, statistiky a kompaktní režim. Projekt je postaven na moderních technologiích a poskytuje efektivní řešení pro optimalizaci viditelnosti a výkonu inzerátů.',
+    descriptionEs:
+      'EasyMarket es una herramienta diseñada para aumentar las ventas renovando automáticamente anuncios en grandes marketplaces. Incluye cuentas de usuario, opciones de ordenación, estadísticas y modo compacto. Construido con tecnologías modernas, ofrece una solución eficiente para mejorar visibilidad y rendimiento.',
     mockup: '/projects/easymarket/mockup.webp',
     featuresCs: [
       'Uživatelské Účty',
@@ -155,8 +186,15 @@ export const projects = [
       'Statistics',
       'Compact Mode',
     ],
+    featuresEs: [
+      'Cuentas de usuario',
+      'Opciones de ordenación',
+      'Estadísticas',
+      'Modo compacto',
+    ],
     badgesCs: ['design', 'vývoj'],
     badgesEn: ['design', 'development'],
+    badgesEs: ['diseño', 'desarrollo'],
     technologies: [
       'nextjs',
       'typescript',
@@ -190,13 +228,17 @@ export const projects = [
       'The Rozmluv.se website is a modern presentation focused on language education. It includes a CMS for easy content management, a blog, a newsletter, support for multiple languages and forms for contact or registration. Thanks to its clear design and practical features, it offers a pleasant user experience and effective communication with visitors.',
     descriptionCs:
       'Webová stránka Rozmluv.se je moderní prezentací zaměřenou na jazykové vzdělávání. Obsahuje CMS pro snadnou správu obsahu, blog, newsletter, podporu více jazyků a formuláře pro kontakt či registraci. Díky přehlednému designu a praktickým funkcím nabízí příjemný uživatelský zážitek a efektivní komunikaci s návštěvníky.',
+    descriptionEs:
+      'El sitio Rozmluv.se es una presentación moderna enfocada en la enseñanza de idiomas. Incluye un CMS para gestión de contenido, blog, newsletter, soporte multilingüe y formularios de contacto o registro. Gracias a su diseño claro y funciones prácticas ofrece una experiencia agradable y comunicación efectiva.',
     mockup: '/projects/rozmluvse/mockup.webp',
     iphone: '/projects/rozmluvse/iphone.webp',
     macbook: '/projects/rozmluvse/macbook.webp',
     featuresCs: ['CMS', 'Blog', 'Newsletter', 'Několik Jazyků', 'Formuláře'],
     featuresEn: ['CMS', 'Blog', 'Newsletter', 'Multiple Languages', 'Forms'],
+    featuresEs: ['CMS', 'Blog', 'Newsletter', 'Varios idiomas', 'Formularios'],
     badgesCs: ['vývoj'],
     badgesEn: ['development'],
+    badgesEs: ['desarrollo'],
     creditsCs: {
       label: 'design od',
       action: '@matousmartak',
@@ -204,6 +246,11 @@ export const projects = [
     },
     creditsEn: {
       label: 'design by',
+      action: '@matousmartak',
+      href: 'https://matousmartak.com/',
+    },
+    creditsEs: {
+      label: 'diseño por',
       action: '@matousmartak',
       href: 'https://matousmartak.com/',
     },
@@ -237,13 +284,17 @@ export const projects = [
       'Manufacturing and renovation of polyurethane parts for industrial use, including wheels, rollers, shafts, and custom components.',
     descriptionCs:
       'Výroba a renovace polyuretanových dílů pro průmyslové využití, včetně kol, válečků, hřídelí a zakázkových komponentů.',
+    descriptionEs:
+      'Fabricación y renovación de piezas de poliuretano para uso industrial, incluyendo ruedas, rodillos, ejes y componentes a medida.',
     mockup: '/projects/zabi/mockup.webp',
     iphone: '/projects/zabi/iphone.webp',
     macbook: '/projects/zabi/macbook.webp',
     featuresCs: ['Interakce'],
     featuresEn: ['Interactions'],
+    featuresEs: ['Interacciones'],
     badgesCs: ['vývoj'],
     badgesEn: ['development'],
+    badgesEs: ['desarrollo'],
     creditsCs: {
       label: 'design od',
       action: '@matousmartak',
@@ -251,6 +302,11 @@ export const projects = [
     },
     creditsEn: {
       label: 'design by',
+      action: '@matousmartak',
+      href: 'https://matousmartak.com/',
+    },
+    creditsEs: {
+      label: 'diseño por',
       action: '@matousmartak',
       href: 'https://matousmartak.com/',
     },
@@ -272,6 +328,8 @@ export const projects = [
       'The website for Dhiffushi Inn combines a CMS, a booking engine, database connectivity, multi-language support, intuitive forms and an interactive map. The design is responsive and user-friendly, focusing on speed and ease of management. The project provides a modern and functional hotel presentation with an emphasis on visitor convenience.',
     descriptionCs:
       'Webová stránka pro Dhiffushi Inn spojuje CMS, rezervační systém, databázové napojení, podporu více jazyků, intuitivní formuláře a interaktivní mapu. Design je responzivní a uživatelsky přívětivý, zaměřený na rychlost a jednoduchou správu. Projekt zajišťuje moderní a funkční prezentaci hotelu s důrazem na pohodlí návštěvníků.',
+    descriptionEs:
+      'El sitio de Dhiffushi Inn combina CMS, motor de reservas, conexión a base de datos, soporte multilingüe, formularios intuitivos y mapa interactivo. El diseño es responsive y fácil de usar, orientado a velocidad y gestión simple. El resultado es una presentación hotelera moderna y funcional centrada en la comodidad del visitante.',
     mockup: '/projects/dhiffushiinn/mockup.webp',
     iphone: '/projects/dhiffushiinn/iphone.webp',
     macbook: '/projects/dhiffushiinn/macbook.webp',
@@ -293,8 +351,18 @@ export const projects = [
       'Custom Map',
       'Gallery',
     ],
+    featuresEs: [
+      'CMS',
+      'Sistema de reservas',
+      'Conexión a base de datos',
+      'Varios idiomas',
+      'Formularios',
+      'Mapa personalizado',
+      'Galería',
+    ],
     badgesCs: ['design', 'vývoj'],
     badgesEn: ['design', 'development'],
+    badgesEs: ['diseño', 'desarrollo'],
     technologies: [
       'nextjs',
       'typescript',
@@ -326,13 +394,17 @@ export const projects = [
       'The Dominik Grossl website is a modern and visually engaging presentation that stands out with complex animations. These animations create a dynamic and interactive experience that highlights the creativity and technological maturity of the project. The design is designed with attention to detail, aesthetics and smooth user navigation.',
     descriptionCs:
       'Webová stránka Dominik Grossl je moderní a vizuálně poutavá prezentace, která vyniká komplexními animacemi. Tyto animace vytvářejí dynamický a interaktivní zážitek, který zdůrazňuje kreativitu a technologickou vyspělost projektu. Design je navržen s důrazem na detail, estetičnost a plynulou uživatelskou navigaci.',
+    descriptionEs:
+      'El sitio de Dominik Grossl es una presentación moderna y visualmente atractiva que destaca por animaciones complejas. Estas animaciones generan una experiencia dinámica e interactiva que resalta la creatividad y madurez tecnológica del proyecto. El diseño está cuidado al detalle, con enfoque estético y navegación fluida.',
     mockup: '/projects/grossl/mockup.webp',
     iphone: '/projects/grossl/iphone.webp',
     macbook: '/projects/grossl/macbook.webp',
     featuresCs: ['Komplexní Animace'],
     featuresEn: ['Complex Animations'],
+    featuresEs: ['Animaciones complejas'],
     badgesCs: ['design', 'vývoj'],
     badgesEn: ['design', 'development'],
+    badgesEs: ['diseño', 'desarrollo'],
     technologies: ['nextjs', 'typescript', 'tailwind', 'framer'],
     images: [],
   },

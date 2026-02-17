@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "projects": "Projekty",
+    "gallery": "Galerie",
+    "talk": "Promluvme si",
+    "language": "Výběr jazyka"
+  },
+  "theme": {
+    "toggle": "Přepnout motiv",
+    "light": "Světlý",
+    "dark": "Tmavý",
+    "system": "Systém"
+  },
+  "common": {
+    "seeAll": "Zobrazit vše",
+    "web": "web",
+    "year": "rok",
+    "copied": "Zkopírováno"
+  },
+  "home": {
+    "location": "Plzeňský kraj, Česká republika",
+    "greeting": "jsem Daniel! 👋",
+    "roleStrongStart": "Webový vývojář",
+    "roleStrongEnd": "fotograf",
+    "roleConnector": "a",
+    "intro": "Mám rád kreativitu i techničnost, a proto tvořím estetické a funkční weby a zachycuji svět skrz objektiv fotoaparátu.",
+    "projectsTitle": "Projekty",
+    "galleryTitle": "Galerie"
+  },
+  "contact": {
+    "title": "Spolupracujme",
+    "idNo": "IČO:",
+    "legalType": "fyzická osoba",
+    "vat": "neplátce DPH",
+    "imageAlt": "kontakt"
+  },
+  "gallery": {
+    "filters": "Filtry",
+    "cars": "Auta",
+    "travel": "Cestování",
+    "people": "Lidé",
+    "animals": "Zvířata",
+    "nature": "Příroda",
+    "retro": "Retro",
+    "posters": "Plakáty"
+  },
+  "projectDetail": {
+    "base": "projekty",
+    "technologies": "Technologie",
+    "features": "Obsahuje",
+    "showcase": "Ukázka"
+  },
+  "notFound": {
+    "title": "Stránka nenalezena",
+    "back": "Zpět domů"
+  },
+  "footer": {
+    "rights": "Všechna práva vyhrazena."
+  },
+  "meta": {
+    "home": {
+      "title": "Domů",
+      "description": "Vítejte v mém portfoliu plném fullstack projektů, fotografie a kreativní tvorby. Prozkoumejte mé schopnosti v Reactu, Next.js a moderních webových technologiích.",
+      "ogTitle": "Daniel Anthony Baudyš - Fullstack Developer Portfolio",
+      "ogDescription": "Vítejte v mém portfoliu plném fullstack projektů, fotografie a kreativní tvorby."
+    },
+    "projects": {
+      "title": "Projekty",
+      "description": "Prozkoumejte mé portfolio fullstack projektů včetně webových aplikací, mobilních řešení a inovativních digitálních produktů postavených na Reactu a Next.js.",
+      "ogTitle": "Projekty | Daniel Anthony Baudyš",
+      "ogDescription": "Prozkoumejte mé portfolio fullstack projektů včetně webových aplikací, mobilních řešení a inovativních digitálních produktů."
+    },
+    "gallery": {
+      "title": "Galerie",
+      "description": "Prohlédněte si moje fotografické portfolio zaměřené na auta, cestování, portréty a kreativní vizuální příběhy.",
+      "ogTitle": "Galerie | Daniel Anthony Baudyš",
+      "ogDescription": "Prohlédněte si moje fotografické portfolio zaměřené na auta, cestování, portréty a kreativní vizuální příběhy."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Napište mi kvůli spolupráci, poptávce projektu nebo jen tak. Rád proberu nové nápady i kreativní projekty.",
+      "ogTitle": "Kontakt | Daniel Anthony Baudyš",
+      "ogDescription": "Napište mi kvůli spolupráci, poptávce projektu nebo jen tak."
+    },
+    "project": {
+      "notFoundTitle": "Projekt nenalezen",
+      "notFoundDescription": "Požadovaný projekt se nepodařilo najít."
+    }
+  }
+}

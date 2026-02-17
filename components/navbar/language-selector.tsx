@@ -1,52 +1,31 @@
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover'
-import { Command, CommandGroup, CommandItem } from '@/components/ui/command'
-import { Check, ChevronsUpDown } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { useEffect, useState, Suspense } from 'react'
-import Image from 'next/image'
-import { cn } from '@/lib/utils'
-import { useLanguage } from '@/store/use-language'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+'use client'
 
-const languages = [
-  {
-    value: 'en',
-    src: '/flags/en.webp',
-  },
-  {
-    value: 'cs',
-    src: '/flags/cs.webp',
-  },
+import Image from 'next/image'
+import { useParams } from 'next/navigation'
+import { Check, ChevronsUpDown } from 'lucide-react'
+import { useLocale, useTranslations } from 'next-intl'
+import { useState } from 'react'
+import { Command, CommandGroup, CommandItem } from '@/components/ui/command'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+import { Button } from '@/components/ui/button'
+import { usePathname, useRouter } from '@/i18n/navigation'
+import type { AppLocale } from '@/i18n/locales'
+import { cn } from '@/lib/utils'
+
+const languages: Array<{ value: AppLocale; src: string; label: string }> = [
+  { value: 'cs', src: '/flags/cs.svg', label: 'Čeština' },
+  { value: 'en', src: '/flags/en.svg', label: 'English' },
+  { value: 'es', src: '/flags/es.svg', label: 'Español' },
 ]
 
 const LanguageSelector = () => {
+  const t = useTranslations('nav')
+  const locale = useLocale() as AppLocale
   const pathname = usePathname()
-  const searchParams = useSearchParams()
   const router = useRouter()
-
-  const { language, imgSrc, setLanguage } = useLanguage((state) => state)
+  const params = useParams()
 
   const [open, setOpen] = useState<boolean>(false)
-
-  useEffect(() => {
-    const lang = searchParams.get('lang')
-    if (lang && lang !== language) {
-      setLanguage(lang)
-    }
-  }, [])
-
-  useEffect(() => {
-    const currentLang = searchParams.get('lang')
-    if (currentLang !== language) {
-      const newSearchParams = new URLSearchParams(searchParams.toString())
-      newSearchParams.set('lang', language)
-      router.replace(`${pathname}?${newSearchParams.toString()}`)
-    }
-  }, [language, pathname, searchParams, router])
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -54,45 +33,66 @@ const LanguageSelector = () => {
         <Button
           variant='outline'
           role='combobox'
-          name='language selector'
+          name={t('language')}
+          aria-label={t('language')}
           aria-expanded={open}
           className='w-[64px] border-none bg-transparent p-0'
         >
           <Image
-            src={imgSrc(language)}
+            src={
+              languages.find((item) => item.value === locale)?.src ??
+              '/flags/en.svg'
+            }
             width={30}
-            height={30}
-            alt={language}
-            className='rounded-sm'
+            height={20}
+            alt={locale}
+            className='h-5 w-[30px] rounded-sm'
           />
           <ChevronsUpDown className='my-2 ml-1 size-4 shrink-0 text-zinc-900 dark:text-zinc-100' />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className='z-[1001] w-[100px] p-2 backdrop-blur-lg'>
+
+      <PopoverContent className='z-[1001] w-[170px] p-2 backdrop-blur-lg'>
         <Command className='!bg-transparent'>
           <CommandGroup className='space-y-2'>
-            {languages.map(({ src, value }: { src: string; value: string }) => (
+            {languages.map(({ src, value, label }) => (
               <CommandItem
                 key={value}
                 onSelect={() => {
-                  setLanguage(value)
+                  if (pathname === '/projects/[slug]') {
+                    const slug = params.slug
+
+                    if (typeof slug === 'string') {
+                      router.replace(
+                        {
+                          pathname,
+                          params: { slug },
+                        },
+                        { locale: value },
+                      )
+                    }
+                  } else {
+                    router.replace(pathname, { locale: value })
+                  }
+
                   setOpen(false)
                 }}
-                className='mb-2 cursor-pointer hover:!bg-muted-foreground/10'
+                className='mb-2 grid w-full grid-cols-[16px_30px_1fr] items-center gap-2 cursor-pointer hover:!bg-muted-foreground/10'
               >
                 <Check
                   className={cn(
-                    'mr-2 h-4 w-4 text-zinc-900 dark:text-zinc-100',
-                    language === value ? 'opacity-100' : 'opacity-0',
+                    'h-4 w-4 text-zinc-900 dark:text-zinc-100',
+                    locale === value ? 'opacity-100' : 'opacity-0',
                   )}
                 />
                 <Image
                   src={src}
                   width={30}
-                  height={30}
+                  height={20}
                   alt={value}
-                  className='rounded-sm'
+                  className='h-5 w-[30px] rounded-sm'
                 />
+                <span className='text-sm'>{label}</span>
               </CommandItem>
             ))}
           </CommandGroup>
@@ -102,22 +102,4 @@ const LanguageSelector = () => {
   )
 }
 
-const LanguageSelectorWithSuspense = () => {
-  return (
-    <Suspense
-      fallback={
-        <Button
-          variant='outline'
-          className='w-[64px] border-none bg-transparent p-0'
-        >
-          <div className='h-[30px] w-[30px] animate-pulse rounded-sm bg-muted' />
-          <ChevronsUpDown className='my-2 ml-1 size-4 shrink-0 text-zinc-900 dark:text-zinc-100' />
-        </Button>
-      }
-    >
-      <LanguageSelector />
-    </Suspense>
-  )
-}
-
-export default LanguageSelectorWithSuspense
+export default LanguageSelector

@@ -1,15 +1,15 @@
 'use client'
 
-import { useLanguage } from '@/store/use-language'
-import { Container } from '../container'
-import { Photo } from '../gallery/photo'
-import { Title } from '../title'
-import { SeeAll } from '../see-all'
+import { useTranslations } from 'next-intl'
 import { vertical } from '@/database/gallery'
 import { shuffle } from '@/lib/utils'
+import { Container } from '../container'
+import { Photo } from '../gallery/photo'
+import { SeeAll } from '../see-all'
+import { Title } from '../title'
 
 export const Gallery = () => {
-  const { language } = useLanguage()
+  const t = useTranslations('home')
 
   const shuffledGallery = shuffle(
     [...vertical],
@@ -19,7 +19,7 @@ export const Gallery = () => {
   return (
     <section>
       <Container>
-        <Title label={language === 'en' ? 'Gallery' : 'Galerie'} />
+        <Title label={t('galleryTitle')} />
 
         <div className='hidden md:grid md:grid-cols-3 md:gap-6'>
           {shuffledGallery.slice(0, 3).map((photo) => (

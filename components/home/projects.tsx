@@ -1,33 +1,23 @@
 'use client'
 
-import { useLanguage } from '@/store/use-language'
-import { Container } from '../container'
-import { Title } from '../title'
+import { useTranslations } from 'next-intl'
 import { projects } from '@/database/projects'
+import { Container } from '../container'
 import { Project } from '../project'
 import { SeeAll } from '../see-all'
+import { Title } from '../title'
 
 export const Projects = () => {
-  const { language } = useLanguage()
+  const t = useTranslations('home')
 
   return (
     <Container>
-      <Title label={language === 'en' ? 'Projects' : 'Projekty'} />
+      <Title label={t('projectsTitle')} />
 
       <div className='grid gap-20 sm:grid-cols-2'>
-        {projects
-          .slice(0, 2)
-          .map(({ name, year, mockup, href, badgesCs, badgesEn }) => (
-            <Project
-              key={href}
-              name={name}
-              year={year}
-              image={mockup}
-              href={href}
-              badgesCs={badgesCs}
-              badgesEn={badgesEn}
-            />
-          ))}
+        {projects.slice(0, 2).map((project) => (
+          <Project key={project.slug} project={project} />
+        ))}
       </div>
 
       <div className='mt-4 flex justify-end'>

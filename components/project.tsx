@@ -1,112 +1,98 @@
 'use client'
 
-import Link from 'next/link'
-import { FC } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { useLocale } from 'next-intl'
 import { Cursor } from './cursor'
-import { useLanguage } from '@/store/use-language'
+import { Link } from '@/i18n/navigation'
+import type { AppLocale } from '@/i18n/locales'
+import { getLocalizedCredits, getLocalizedList } from '@/lib/projects'
+import type { Project as ProjectRecord } from '@/types/project'
 
 interface ProjectProps {
-  name: string
-  year: number
-  image: string
-  href: string
-  badgesCs: string[]
-  badgesEn: string[]
-  creditsCs?: {
-    label: string
-    action: string
-    href: string
-  }
-  creditsEn?: {
-    label: string
-    action: string
-    href: string
-  }
+  project: ProjectRecord
 }
 
-export const Project: FC<ProjectProps> = ({
-  name,
-  year,
-  image,
-  href,
-  badgesCs,
-  badgesEn,
-  creditsCs,
-  creditsEn,
-}) => {
-  const { language } = useLanguage()
+export const Project = ({ project }: ProjectProps) => {
+  const locale = useLocale() as AppLocale
+
+  const badges = getLocalizedList(
+    {
+      cs: project.badgesCs,
+      en: project.badgesEn,
+      es: project.badgesEs,
+    },
+    locale,
+  )
+
+  const credits = getLocalizedCredits(
+    {
+      cs: project.creditsCs,
+      en: project.creditsEn,
+      es: project.creditsEs,
+    },
+    locale,
+  )
 
   return (
-    <Link href={href}>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.3 }}
+    >
+      <Link
+        href={{ pathname: '/projects/[slug]', params: { slug: project.slug } }}
       >
         <Cursor type='project'>
-          <img src={image} alt={name} />
+          <Image
+            src={project.mockup}
+            alt={project.name}
+            width={1600}
+            height={900}
+            sizes='(max-width: 768px) 100vw, 50vw'
+            className='h-auto w-full'
+          />
         </Cursor>
+      </Link>
 
-        <div className='mt-3 flex items-center justify-between'>
-          <h3 className='italic'>
-            {name}{' '}
-            <span className='text-sm font-light not-italic text-muted-foreground'>
-              | {year}
-            </span>
-          </h3>
-          <div className='flex gap-2 text-xs text-zinc-700 dark:text-zinc-100'>
+      <div className='mt-3 flex items-center justify-between'>
+        <h3 className='italic'>
+          <Link
+            href={{ pathname: '/projects/[slug]', params: { slug: project.slug } }}
+            className='hover:underline'
+          >
+            {project.name}
+          </Link>{' '}
+          <span className='text-sm font-light not-italic text-muted-foreground'>
+            | {project.year}
+          </span>
+        </h3>
+
+        <div className='flex gap-2 text-xs text-zinc-700 dark:text-zinc-100'>
+          {credits && (
             <Cursor type='external'>
-              {language === 'en'
-                ? creditsEn && (
-                    <Link
-                      href={creditsEn?.href || '#'}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      onClick={(e) => e.stopPropagation()}
-                      className='cursor-none rounded-md bg-zinc-400/20 px-1 py-0.5 dark:bg-white/20'
-                    >
-                      {creditsEn?.label}{' '}
-                      <span className='font-bold underline'>
-                        {creditsEn?.action}
-                      </span>
-                    </Link>
-                  )
-                : creditsCs && (
-                    <Link
-                      href={creditsCs?.href || '#'}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      onClick={(e) => e.stopPropagation()}
-                      className='cursor-none rounded-md bg-zinc-400/20 px-1 py-0.5 dark:bg-white/20'
-                    >
-                      {creditsCs?.label}{' '}
-                      <span className='font-bold underline'>
-                        {creditsCs?.action}
-                      </span>
-                    </Link>
-                  )}
+              <a
+                href={credits.href}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='cursor-none rounded-md bg-zinc-400/20 px-1 py-0.5 dark:bg-white/20'
+              >
+                {credits.label}{' '}
+                <span className='font-bold underline'>{credits.action}</span>
+              </a>
             </Cursor>
-            {language === 'en'
-              ? badgesEn.map((badge: string) => (
-                  <span
-                    key={badge}
-                    className='rounded-md bg-zinc-400/20 px-1 py-0.5 dark:bg-white/20'
-                  >
-                    {badge}
-                  </span>
-                ))
-              : badgesCs.map((badge: string) => (
-                  <span
-                    key={badge}
-                    className='rounded-md bg-zinc-400/20 px-1 py-0.5 dark:bg-white/20'
-                  >
-                    {badge}
-                  </span>
-                ))}
-          </div>
+          )}
+
+          {badges.map((badge) => (
+            <span
+              key={badge}
+              className='rounded-md bg-zinc-400/20 px-1 py-0.5 dark:bg-white/20'
+            >
+              {badge}
+            </span>
+          ))}
         </div>
-      </motion.div>
-    </Link>
+      </div>
+    </motion.div>
   )
 }
