@@ -24,8 +24,43 @@ const LanguageSelector = () => {
   const pathname = usePathname()
   const router = useRouter()
   const params = useParams()
-
   const [open, setOpen] = useState<boolean>(false)
+
+  const pushPreservingScroll = (targetLocale: AppLocale): void => {
+    if (pathname === '/projects/[slug]') {
+      const slug = params.slug
+
+      if (typeof slug === 'string') {
+        router.push(
+          {
+            pathname,
+            params: { slug },
+          },
+          { locale: targetLocale, scroll: false },
+        )
+        return
+      }
+    }
+
+    if (pathname === '/') {
+      router.push('/', { locale: targetLocale, scroll: false })
+      return
+    }
+
+    if (pathname === '/projects') {
+      router.push('/projects', { locale: targetLocale, scroll: false })
+      return
+    }
+
+    if (pathname === '/gallery') {
+      router.push('/gallery', { locale: targetLocale, scroll: false })
+      return
+    }
+
+    if (pathname === '/contact') {
+      router.push('/contact', { locale: targetLocale, scroll: false })
+    }
+  }
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -59,25 +94,15 @@ const LanguageSelector = () => {
               <CommandItem
                 key={value}
                 onSelect={() => {
-                  if (pathname === '/projects/[slug]') {
-                    const slug = params.slug
-
-                    if (typeof slug === 'string') {
-                      router.replace(
-                        {
-                          pathname,
-                          params: { slug },
-                        },
-                        { locale: value },
-                      )
-                    }
-                  } else {
-                    router.replace(pathname, { locale: value })
+                  if (value === locale) {
+                    setOpen(false)
+                    return
                   }
 
+                  pushPreservingScroll(value)
                   setOpen(false)
                 }}
-                className='mb-2 grid w-full grid-cols-[16px_30px_1fr] items-center gap-2 cursor-pointer hover:!bg-muted-foreground/10'
+                className='mb-2 grid w-full cursor-pointer grid-cols-[16px_30px_1fr] items-center gap-2 hover:!bg-muted-foreground/10'
               >
                 <Check
                   className={cn(

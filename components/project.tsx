@@ -37,9 +37,8 @@ export const Project = ({ project }: ProjectProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ delay: 0.3 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.15 }}
     >
       <Link
         href={{ pathname: '/projects/[slug]', params: { slug: project.slug } }}
