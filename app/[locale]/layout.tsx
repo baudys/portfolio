@@ -14,6 +14,7 @@ import { buildPersonSchema, buildWebSiteSchema } from '@/lib/structured-data'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/providers/theme-provider'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import '../globals.css'
 
 export const metadata: Metadata = {
@@ -79,6 +80,8 @@ export default async function LocaleLayout({
         <JsonLd data={personSchema} />
         <JsonLd data={webSiteSchema} />
         <Analytics />
+        <SpeedInsights />
+
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute='class'
