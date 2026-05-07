@@ -58,9 +58,10 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
 
         <li onClick={() => setIsOpen(false)}>
           <Link href='/contact'>
-            <ShinyButton className='flex flex-nowrap items-center gap-2 rounded-lg text-4xl'>
+            <ShinyButton className='flex flex-nowrap items-center gap-2 rounded-lg text-2xl sm:text-4xl'>
+              <div className='mr-1 size-3 rounded-full bg-green-500 sm:size-4' />
               {t('talk')}
-              <ArrowRight className='h-8 w-8' />
+              <ArrowRight className='h-6 w-6 sm:h-8 sm:w-8' />
             </ShinyButton>
           </Link>
         </li>
