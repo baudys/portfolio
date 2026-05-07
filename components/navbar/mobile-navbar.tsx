@@ -22,15 +22,15 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
         scaleY: 1,
         transition: {
           duration: 0.5,
-          ease: [0.12, 0, 0.39, 0],
-        },
+          ease: [0.12, 0, 0.39, 0]
+        }
       }}
       exit={{
         scaleY: 0,
         transition: {
           duration: 0.5,
-          ease: [0.22, 1, 0.36, 1],
-        },
+          ease: [0.22, 1, 0.36, 1]
+        }
       }}
       className='fixed left-0 top-0 z-50 grid h-screen w-screen origin-top justify-between bg-background'
     >
@@ -45,8 +45,16 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
         transition={{ delay: 0.5 }}
         className='absolute left-1/2 top-60 flex -translate-x-1/2 flex-col items-center gap-6 text-center'
       >
-        <MobileNavItem label={t('projects')} href='/projects' setIsOpen={setIsOpen} />
-        <MobileNavItem label={t('gallery')} href='/gallery' setIsOpen={setIsOpen} />
+        <MobileNavItem
+          label={t('projects')}
+          href='/projects'
+          setIsOpen={setIsOpen}
+        />
+        <MobileNavItem
+          label={t('gallery')}
+          href='/gallery'
+          setIsOpen={setIsOpen}
+        />
 
         <li onClick={() => setIsOpen(false)}>
           <Link href='/contact'>

@@ -11,7 +11,7 @@ interface MobileNavItemProps {
 export const MobileNavItem: FC<MobileNavItemProps> = ({
   label,
   href,
-  setIsOpen,
+  setIsOpen
 }) => {
   const pathname = usePathname()
   const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href)
@@ -24,7 +24,7 @@ export const MobileNavItem: FC<MobileNavItemProps> = ({
         onClick={() => setIsOpen(false)}
         className={cn(
           'relative text-4xl font-medium after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:scale-x-0 after:rounded-lg after:bg-muted-foreground after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100',
-          isActive && 'font-bold',
+          isActive && 'font-bold'
         )}
       >
         {label}

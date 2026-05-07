@@ -80,7 +80,7 @@ interface CreativeWorkSchema extends JsonLdBase {
 const localeLanguageByCode: Record<AppLocale, string> = {
   cs: 'cs-CZ',
   en: 'en-US',
-  es: 'es-ES',
+  es: 'es-ES'
 }
 
 export const buildPersonSchema = (): PersonSchema => {
@@ -95,34 +95,34 @@ export const buildPersonSchema = (): PersonSchema => {
       'https://www.linkedin.com/in/baudys/',
       'https://www.github.com/baudys/',
       'https://www.instagram.com/baudys.me/',
-      'https://www.youtube.com/channel/UCblA_CnykG2Dw_6IMwZ9z9A',
+      'https://www.youtube.com/channel/UCblA_CnykG2Dw_6IMwZ9z9A'
     ],
     knowsAbout: [
       'Next.js',
       'TypeScript',
       'Technical SEO',
       'Web Development',
-      'UI Engineering',
-    ],
+      'UI Engineering'
+    ]
   }
 }
 
 export const buildWebSiteSchema = (
   locale: AppLocale,
-  localizedHomeUrl: string,
+  localizedHomeUrl: string
 ): WebSiteSchema => {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: SITE_NAME,
     url: localizedHomeUrl,
-    inLanguage: localeLanguageByCode[locale],
+    inLanguage: localeLanguageByCode[locale]
   }
 }
 
 export const buildContactPointSchema = (
   locale: AppLocale,
-  contactUrl: string,
+  contactUrl: string
 ): ContactPointSchema => {
   return {
     '@context': 'https://schema.org',
@@ -131,12 +131,12 @@ export const buildContactPointSchema = (
     email: 'daniel@baudys.dev',
     telephone: '+420777530096',
     availableLanguage: [localeLanguageByCode[locale]],
-    url: contactUrl,
+    url: contactUrl
   }
 }
 
 export const buildBreadcrumbListSchema = (
-  items: BreadcrumbItem[],
+  items: BreadcrumbItem[]
 ): BreadcrumbListSchema => {
   return {
     '@context': 'https://schema.org',
@@ -145,8 +145,8 @@ export const buildBreadcrumbListSchema = (
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: item.item,
-    })),
+      item: item.item
+    }))
   }
 }
 
@@ -154,7 +154,7 @@ export const buildProjectSchema = (
   project: Project,
   description: string,
   locale: AppLocale,
-  projectUrl: string,
+  projectUrl: string
 ): SoftwareSourceCodeSchema | CreativeWorkSchema => {
   const base = {
     '@context': 'https://schema.org' as const,
@@ -164,28 +164,28 @@ export const buildProjectSchema = (
     inLanguage: localeLanguageByCode[locale],
     creator: {
       '@type': 'Person' as const,
-      name: SITE_NAME,
+      name: SITE_NAME
     },
     image: `${SITE_URL}${project.images[0] ?? '/logo.webp'}`,
     keywords: [
       project.seo?.primaryKeyword,
       ...(project.seo?.secondaryKeywords ?? []),
-      ...project.technologies,
+      ...project.technologies
     ]
       .filter(Boolean)
-      .join(', '),
+      .join(', ')
   }
 
   if (project.github) {
     return {
       ...base,
       '@type': 'SoftwareSourceCode',
-      codeRepository: project.github,
+      codeRepository: project.github
     }
   }
 
   return {
     ...base,
-    '@type': 'CreativeWork',
+    '@type': 'CreativeWork'
   }
 }

@@ -5,17 +5,13 @@ import {
   localeLanguageTag,
   localeOpenGraph,
   locales,
-  type AppLocale,
+  type AppLocale
 } from '@/i18n/locales'
 
 export const SITE_URL = 'https://baudys.dev'
 export const SITE_NAME = 'Daniel Anthony Baudyš'
 
-type StaticHref =
-  | '/'
-  | '/projects'
-  | '/gallery'
-  | '/contact'
+type StaticHref = '/' | '/projects' | '/gallery' | '/contact'
 
 type DynamicProjectHref = {
   pathname: '/projects/[slug]'
@@ -32,7 +28,9 @@ export const getLocalizedUrl = (href: AppHref, locale: AppLocale): string => {
   return toAbsoluteUrl(getPathname({ href, locale }))
 }
 
-export const buildLanguageAlternates = (href: AppHref): Record<string, string> => {
+export const buildLanguageAlternates = (
+  href: AppHref
+): Record<string, string> => {
   const languages = locales.reduce<Record<string, string>>((acc, item) => {
     acc[localeLanguageTag[item]] = getLocalizedUrl(href, item)
     return acc
@@ -45,11 +43,11 @@ export const buildLanguageAlternates = (href: AppHref): Record<string, string> =
 
 export const buildAlternates = (
   href: AppHref,
-  locale: AppLocale,
+  locale: AppLocale
 ): Metadata['alternates'] => {
   return {
     canonical: getLocalizedUrl(href, locale),
-    languages: buildLanguageAlternates(href),
+    languages: buildLanguageAlternates(href)
   }
 }
 

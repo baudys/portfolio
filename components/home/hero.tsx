@@ -21,7 +21,10 @@ export const Hero = () => {
             {t('location')}
             <span>
               (
-              <LiveClock locale={locale} timeZone='Europe/Prague' />
+              <LiveClock
+                locale={locale}
+                timeZone='Europe/Prague'
+              />
               )
             </span>
           </p>
@@ -32,7 +35,8 @@ export const Hero = () => {
           </h1>
 
           <p className='mb-6 mt-4 text-zinc-950 dark:text-zinc-50 lg:text-lg 2xl:text-xl'>
-            <b>{t('roleStrongStart')}</b> {t('roleConnector')} <b>{t('roleStrongEnd')}</b>
+            <b>{t('roleStrongStart')}</b> {t('roleConnector')}{' '}
+            <b>{t('roleStrongEnd')}</b>
           </p>
 
           <p className='text-justify text-sm text-zinc-800 dark:text-zinc-200 lg:text-base 2xl:text-lg'>

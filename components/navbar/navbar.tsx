@@ -46,10 +46,13 @@ export const Navbar = () => {
           className={cn(
             'flex h-full w-full items-center justify-between rounded-xl border border-transparent px-2',
             !isTopOfTheScreen &&
-              'border-muted-foreground/30 bg-zinc-100/60 shadow-sm backdrop-blur-lg dark:bg-zinc-800/40',
+              'border-muted-foreground/30 bg-zinc-100/60 shadow-sm backdrop-blur-lg dark:bg-zinc-800/40'
           )}
         >
-          <Link href='/' className='transition duration-300'>
+          <Link
+            href='/'
+            className='transition duration-300'
+          >
             <ImageWithSkeleton
               src='/logo.webp'
               alt='Daniel Anthony Baudyš logo'
@@ -69,8 +72,14 @@ export const Navbar = () => {
             <hr className='ml-6 mr-8 h-8 w-px bg-muted-foreground/70' />
 
             <ul className='flex items-center gap-6'>
-              <NavItem label={t('projects')} href='/projects' />
-              <NavItem label={t('gallery')} href='/gallery' />
+              <NavItem
+                label={t('projects')}
+                href='/projects'
+              />
+              <NavItem
+                label={t('gallery')}
+                href='/gallery'
+              />
               <li>
                 <Link href='/contact'>
                   <ShinyButton className='flex items-center gap-1 text-base'>

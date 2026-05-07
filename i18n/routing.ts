@@ -11,22 +11,22 @@ export const routing = defineRouting({
     '/projects': {
       cs: '/projekty',
       en: '/projects',
-      es: '/proyectos',
+      es: '/proyectos'
     },
     '/projects/[slug]': {
       cs: '/projekty/[slug]',
       en: '/projects/[slug]',
-      es: '/proyectos/[slug]',
+      es: '/proyectos/[slug]'
     },
     '/gallery': {
       cs: '/galerie',
       en: '/gallery',
-      es: '/galeria',
+      es: '/galeria'
     },
     '/contact': {
       cs: '/kontakt',
       en: '/contact',
-      es: '/contacto',
-    },
-  },
+      es: '/contacto'
+    }
+  }
 })
